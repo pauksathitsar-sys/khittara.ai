@@ -1,0 +1,19 @@
+[
+  { "date": "2024-01-01", "morning_set": "1415.85", "morning_value": "35234.33", "morning_2d": "54", "evening_set": "1418.52", "evening_value": "45632.78", "evening_2d": "22" },
+  { "date": "2024-01-02", "morning_set": "1420.12", "morning_value": "28123.45", "morning_2d": "23", "evening_set": "1425.67", "evening_value": "39245.89", "evening_2d": "75" },
+  { "date": "2024-01-03", "morning_set": "1418.34", "morning_value": "31456.21", "morning_2d": "46", "evening_set": "1412.09", "evening_value": "42367.54", "evening_2d": "97" },
+  { "date": "2024-01-04", "morning_set": "1410.56", "morning_value": "29567.80", "morning_2d": "67", "evening_set": "1415.23", "evening_value": "35678.91", "evening_2d": "38" },
+  { "date": "2024-01-05", "morning_set": "1412.78", "morning_value": "32456.12", "morning_2d": "86", "evening_set": "1419.45", "evening_value": "40123.45", "evening_2d": "53" },
+  { "date": "2025-01-02", "morning_set": "1461.34", "morning_value": "45678.92", "morning_2d": "48", "evening_set": "1465.71", "evening_value": "51234.36", "evening_2d": "14" },
+  { "date": "2025-01-03", "morning_set": "1458.20", "morning_value": "38945.67", "morning_2d": "07", "evening_set": "1455.42", "evening_value": "42367.89", "evening_2d": "27" },
+  { "date": "2025-01-06", "morning_set": "1452.15", "morning_value": "35123.44", "morning_2d": "54", "evening_set": "1450.88", "evening_value": "41234.56", "evening_2d": "84" },
+  { "date": "2025-01-07", "morning_set": "1448.92", "morning_value": "28945.61", "morning_2d": "21", "evening_set": "1445.33", "evening_value": "39245.82", "evening_2d": "32" },
+  { "date": "2026-05-01", "morning_set": "1385.12", "morning_value": "41234.56", "morning_2d": "24", "evening_set": "1388.45", "evening_value": "52345.67", "evening_2d": "55" },
+  { "date": "2026-05-02", "morning_set": "1390.34", "morning_value": "38456.78", "morning_2d": "46", "evening_set": "1395.21", "evening_value": "48567.89", "evening_2d": "17" },
+  { "date": "2026-05-03", "morning_set": "1392.45", "morning_value": "35678.90", "morning_2d": "58", "evening_set": "1389.12", "evening_value": "45789.01", "evening_2d": "29" },
+  { "date": "2026-05-04", "morning_set": "1387.56", "morning_value": "32145.67", "morning_2d": "65", "evening_set": "1382.34", "evening_value": "42356.78", "evening_2d": "46" },
+  { "date": "2026-05-05", "morning_set": "1380.12", "morning_value": "28123.45", "morning_2d": "23", "evening_set": "1378.45", "evening_value": "39245.89", "evening_2d": "55" },
+  { "date": "2026-05-12", "morning_set": "1372.45", "morning_value": "25123.45", "morning_2d": "53", "evening_set": "1370.21", "evening_value": "35245.89", "evening_2d": "15" },
+  { "date": "2026-05-13", "morning_set": "1368.12", "morning_value": "22123.45", "morning_2d": "23", "evening_set": "1365.45", "evening_value": "32245.89", "evening_2d": "55" },
+  { "date": "2026-05-14", "morning_set": "1362.45", "morning_value": "20123.45", "morning_2d": "53", "evening_set": "1360.21", "evening_value": "30245.89", "evening_2d": "15" }
+]
