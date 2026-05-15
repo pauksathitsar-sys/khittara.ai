@@ -1,0 +1,56 @@
+{
+  "archives": {
+    "2026": {
+      "05": {
+        "11": {
+          "am": {
+            "date": "2026-05-11",
+            "session": "AM",
+            "set": "1,493.75",
+            "value": "56",
+            "val": "38,646.92",
+            "timestamp": "2026-05-11T12:01:00Z",
+            "modern": "--",
+            "internet": "--",
+            "tw": "--"
+          },
+          "pm": {
+            "date": "2026-05-11",
+            "session": "PM",
+            "set": "--",
+            "value": "99",
+            "val": "--",
+            "timestamp": "2026-05-11T16:30:00Z",
+            "modern": "--",
+            "internet": "--",
+            "tw": "--"
+          }
+        }
+      }
+    }
+  },
+  "history": [
+    {
+      "date": "2026-05-11",
+      "session": "PM",
+      "set": "--",
+      "value": "99",
+      "val": "--",
+      "timestamp": "2026-05-11T16:30:00Z",
+      "modern": "--",
+      "internet": "--",
+      "tw": "--"
+    },
+    {
+      "date": "2026-05-11",
+      "session": "AM",
+      "set": "1,493.75",
+      "value": "56",
+      "val": "38,646.92",
+      "timestamp": "2026-05-11T12:01:00Z",
+      "modern": "--",
+      "internet": "--",
+      "tw": "--"
+    }
+  ]
+}
