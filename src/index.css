@@ -1,0 +1,53 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Outfit", sans-serif;
+  
+  --color-gold: #eab308;
+  --color-gold-muted: rgba(234, 179, 8, 0.1);
+  --color-zinc-950: #09090b;
+}
+
+@layer base {
+  body {
+    @apply font-sans antialiased transition-colors duration-300;
+  }
+}
+
+.theme-dark {
+  @apply bg-zinc-950 text-white;
+}
+
+.theme-light {
+  @apply bg-zinc-50 text-zinc-950;
+}
+
+.khittara-gradient {
+  background: linear-gradient(135deg, #eab308 0%, #fbbf24 100%);
+}
+
+.glass-zinc {
+  @apply backdrop-blur-md border transition-all;
+}
+
+.theme-dark .glass-zinc {
+  @apply bg-zinc-900/50 border-zinc-800;
+}
+
+.theme-light .glass-zinc {
+  @apply bg-white/70 border-zinc-200 shadow-sm;
+}
+
+.sidebar-shadow {
+  @apply transition-shadow duration-300;
+}
+
+.theme-dark .sidebar-shadow {
+  box-shadow: 20px 0 50px rgba(0, 0, 0, 0.5);
+}
+
+.theme-light .sidebar-shadow {
+  box-shadow: 20px 0 50px rgba(0, 0, 0, 0.05);
+}
+
