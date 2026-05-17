@@ -16,6 +16,8 @@ async function startServer() {
   const BRAIN_FILE = path.join(process.cwd(), 'khittara.md');
   const VIDEO_LOG_FILE = path.join(process.cwd(), 'video_logs.md');
   const IMAGE_LOG_FILE = path.join(process.cwd(), 'image_logs.md');
+  // ၂ဒီ သမိုင်းကြောင်း JSON ဖိုင်လမ်းကြောင်း သတ်မှတ်ခြင်း
+  const HISTORICAL_2D_FILE = path.join(process.cwd(), '2d_historical_data.json');
 
   // Initialize video_logs.md if not exists
   try {
@@ -37,8 +39,6 @@ async function startServer() {
   // Helper for Markdown table or CSV parsing
   const parseDataForExcel = (data: string) => {
     const lines = data.trim().split('\n');
-    
-    // Check if it's a Markdown table (contains |)
     if (lines.some(l => l.includes('|'))) {
       return lines
         .filter(line => line.includes('|') && !line.includes('---'))
@@ -48,12 +48,7 @@ async function startServer() {
               .filter(cell => cell !== '')
         );
     }
-    
-    // Otherwise assume CSV (simple comma split)
-    return lines.map(line => 
-      line.split(',')
-          .map(cell => cell.trim())
-    );
+    return lines.map(line => line.split(',').map(cell => cell.trim()));
   };
 
   // Global health tracker
@@ -113,26 +108,78 @@ async function startServer() {
     if (!apiKey) return res.status(400).json({ error: 'No key provided' });
 
     try {
-      // Small test request to verify tier
-      // Free tier usually doesn't have technical metadata about its tier in simple responses,
-      // but we can check if it's "Free" or "Paid" by looking at the model info if allowed
-      // or just assume Free if no evidence of Paid.
-      // Another way: Paid tiers have higher limits.
-      
       const testUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-3-flash-preview?key=${apiKey}`;
       const response = await axios.get(testUrl);
-      
-      // If the model info fetch works, we can check for limits or just mark as active
-      // For now, let's look for Pay-as-you-go indicators (billing enabled on project)
-      // Actually, we'll default to 'Free' unless we find a reason not to.
-      
-      apiStats.tier = 'Free'; // Default
-      
-      // If we could check billing, we would.
-      
+      apiStats.tier = 'Free';
       res.json({ tier: apiStats.tier, status: 'Active' });
     } catch (err: any) {
       res.json({ tier: 'Unknown', status: 'Invalid', error: err.message });
+    }
+  });
+
+  // ==========================================
+  // အသစ်ထည့်သွင်းထားသော GEMINI CHAT ENDPOINT (ဒေတာအမှန်ဖြေနိုင်ရန်)
+  // ==========================================
+  app.post('/api/chat', async (req, res) => {
+    try {
+      const { message, apiKey } = req.body;
+      if (!message) return res.status(400).json({ error: "Message is required" });
+      if (!apiKey) return res.status(400).json({ error: "API Key is required" });
+
+      // ၁။ 2d_historical_data.json ဖိုင်ကို Backend ကနေ လှမ်းဖတ်ပါမယ်
+      let historical2dData = "[]";
+      try {
+        historical2dData = await fs.readFile(HISTORICAL_2D_FILE, 'utf-8');
+      } catch (e) {
+        console.log("Historical 2D file not found, using empty array.");
+      }
+
+      // ၂။ Gemini API ကို ချိတ်ဆက်ပါတယ်
+      const genAI = new GoogleGenerativeAI(apiKey);
+      const model = genAI.getGenerativeModel({ model: "gemini-3-flash-preview" });
+
+      // ၃။ System Prompt ထဲမှာ 2D Dataset ကို ထည့်သွင်းပြီး Content မျိုးဆက်ပေးပါတယ်
+      const systemInstruction = `
+        မင်းရဲ့အမည်က Khittara AI (ခေတ္တရာ အိုင်အေ) ဖြစ်သည်။ မင်းက မြန်မာနိုင်ငံက တီထွင်သူ Min Thit Sar Aung ဖန်တီးထားတဲ့ AI Assistant ဖြစ်သည်။
+        အသုံးပြုသူက ၂D (သို့မဟုတ်) ထိုင်းစတော့အိတ်ချိန်း (SET Index) သမိုင်းကြောင်းဆိုင်ရာ အချက်အလက်များကို မေးမြန်းပါက 
+        အောက်တွင် ပေးထားသော JSON ဒေတာစုကို သေချာစွာ ကြည့်ရှုပြီး အမှန်ကန်ဆုံးနှင့် အတိကျဆုံး ပြန်လည်ဖြေကြားပေးပါ။
+        ဂဏန်းအချက်အလက်များကို မှန်းဆပြီး လိမ်မဖြေပါနှင့်။
+
+        [၂D သမိုင်းကြောင်း ဒေတာစု (2D HISTORICAL DATASET)]
+        ${historical2dData}
+      `;
+
+      const startTime = Date.now();
+      
+      // AI ထံ မက်ဆေ့ခ်ျ ပို့ခြင်း
+      const chat = model.startChat({
+        history: [
+          { role: 'user', parts: [{ text: systemInstruction }] },
+          { role: 'model', parts: [{ text: "ဟုတ်ကဲ့ပါဗျာ။ ကျွန်တော် ခေတ္တရာ AI ဖြစ်ပါတယ်။ ပေးထားတဲ့ ၂D သမိုင်းကြောင်း ဒေတာစုကို အခြေခံပြီး တိကျမှန်ကန်စွာ ဖြေကြားပေးသွားပါ့မယ်။" }] }
+        ]
+      });
+
+      const response = await chat.sendMessage(message);
+      const replyText = response.response.text();
+      const latency = Date.now() - startTime;
+
+      // ၄။ Usage Report ကိုလည်း အလိုအလျောက် သွားပေါင်းထည့်ပေးပါတယ်
+      // Free Tier အတွက် Token ခန့်မှန်းခြေ တွက်ချက်ခြင်း (စာလုံးအရှည်အလိုက်)
+      const inputTokens = Math.ceil((systemInstruction.length + message.length) / 4);
+      const outputTokens = Math.ceil(replyText.length / 4);
+      const totalTokens = inputTokens + outputTokens;
+
+      apiStats.totalTokens += totalTokens;
+      apiStats.dailyTokens += totalTokens;
+      apiStats.requestCount += 1;
+      apiStats.dailyRequests += 1;
+      apiStats.totalLatency += latency;
+
+      res.json({ reply: replyText });
+
+    } catch (error: any) {
+      console.error("Chat Error:", error);
+      res.status(500).json({ error: "AI တုံ့ပြန်မှု ယူရာတွင် အမှားအယွင်းရှိနေပါသည်", details: error.message });
     }
   });
 
@@ -140,9 +187,7 @@ async function startServer() {
   app.post('/api/vision/export', async (req, res) => {
     try {
       const { data, format, filename } = req.body;
-      if (!data) {
-        return res.status(400).json({ error: 'No data provided for export' });
-      }
+      if (!data) return res.status(400).json({ error: 'No data provided for export' });
       const cleanData = String(data).replace(/```[a-z]*\n|```/g, '').trim();
       const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
       const finalFilename = filename || `VisionCore_Export_${timestamp}.${format}`;
@@ -206,140 +251,103 @@ async function startServer() {
         return;
       }
 
-      // Default to TXT
       res.setHeader('Content-Type', 'text/plain');
       res.setHeader('Content-Disposition', `attachment; filename=${finalFilename}`);
       res.send(cleanData);
 
     } catch (error: any) {
       console.error('Export error:', error);
-      res.status(500).json({ 
-        error: 'Failed to generate export file',
-        errorMsg: error.message || 'Unknown export error'
-      });
+      res.status(500).json({ error: 'Failed to generate export file', errorMsg: error.message || 'Unknown export error' });
     }
   });
 
   app.get('/api/second-brain', async (req, res) => {
     try {
-      const content = await fs.readFile(path.join(process.cwd(), 'khittara.md'), 'utf-8');
+      const content = await fs.readFile(BRAIN_FILE, 'utf-8');
       res.json({ content });
     } catch (error: any) {
-      res.status(500).json({ 
-        error: 'Failed to read Second Brain',
-        errorMsg: error.message || 'IO error'
-      });
+      res.status(500).json({ error: 'Failed to read Second Brain', errorMsg: error.message || 'IO error' });
     }
   });
 
   app.post('/api/second-brain/log', async (req, res) => {
     try {
       const { sessionData } = req.body;
-      const filePath = path.join(process.cwd(), 'khittara.md');
-      const content = await fs.readFile(filePath, 'utf-8');
-      
-      const logEntry = `\n*   **Session (${new Date().toLocaleString()}):** ${sessionData}\n`;
-      
-      // Find the Experimental Logs section
+      const content = await fs.readFile(BRAIN_FILE, 'utf-8');
+      const logEntry = `\n* **Session (${new Date().toLocaleString()}):** ${sessionData}\n`;
       const targetSection = '## ၉။ Live Neural Streams (Real-time Feeds)';
       const parts = content.split(targetSection);
       
       if (parts.length === 2) {
         const newContent = parts[0] + targetSection + logEntry + parts[1];
-        await fs.writeFile(filePath, newContent, 'utf-8');
+        await fs.writeFile(BRAIN_FILE, newContent, 'utf-8');
         res.json({ success: true });
       } else {
-        // Fallback: append to end
-        await fs.appendFile(filePath, logEntry, 'utf-8');
+        await fs.appendFile(BRAIN_FILE, logEntry, 'utf-8');
         res.json({ success: true });
       }
     } catch (error: any) {
       console.error('Logging error:', error);
-      res.status(500).json({ 
-        error: 'Failed to log to Second Brain',
-        errorMsg: error.message || 'Log write error'
-      });
+      res.status(500).json({ error: 'Failed to log to Second Brain', errorMsg: error.message || 'Log write error' });
     }
   });
 
   app.post('/api/second-brain/sync', async (req, res) => {
     try {
-      const { content: newEntry, section } = req.body;
-      if (!newEntry) {
-        return res.status(400).json({ error: 'No content provided for sync' });
-      }
-      const filePath = path.join(process.cwd(), 'khittara.md');
+      const { content: newEntry } = req.body;
+      if (!newEntry) return res.status(400).json({ error: 'No content provided for sync' });
       let content = '';
       try {
-        content = await fs.readFile(filePath, 'utf-8');
+        content = await fs.readFile(BRAIN_FILE, 'utf-8');
       } catch (e) {
         content = '# Khittara AI Second Brain\n';
       }
       
       const timestamp = new Date().toLocaleDateString('en-US', { year: 'numeric', month: '2-digit', day: '2-digit' });
-      const safeEntry = String(newEntry);
-      
-      const formattedEntry = `\n### [${timestamp}] - Memory Sync\n${safeEntry}\n\n---\n`;
-      
-      // Target section: ## ၁၁။ Memory Stream (Daily Logs & Highlights)
+      const formattedEntry = `\n### [${timestamp}] - Memory Sync\n${String(newEntry)}\n\n---\n`;
       const targetHeader = '## ၁၁။ Memory Stream (Daily Logs & Highlights)';
       
       if (content.includes(targetHeader)) {
         const parts = content.split(targetHeader);
         const updatedContent = parts[0] + targetHeader + formattedEntry + parts[1];
-        await fs.writeFile(filePath, updatedContent, 'utf-8');
+        await fs.writeFile(BRAIN_FILE, updatedContent, 'utf-8');
       } else {
-        // Append at the end but before the ARCHIVE STATUS if possible
         const archiveMark = '**ARCHIVE STATUS:**';
         if (content.includes(archiveMark)) {
           const parts = content.split(archiveMark);
           const updatedContent = parts[0] + '\n---\n\n' + targetHeader + formattedEntry + '\n' + archiveMark + parts[1];
-          await fs.writeFile(filePath, updatedContent, 'utf-8');
+          await fs.writeFile(BRAIN_FILE, updatedContent, 'utf-8');
         } else {
-          await fs.appendFile(filePath, '\n---\n\n' + targetHeader + formattedEntry, 'utf-8');
+          await fs.appendFile(BRAIN_FILE, '\n---\n\n' + targetHeader + formattedEntry, 'utf-8');
         }
       }
-      
       res.json({ success: true });
     } catch (error: any) {
       console.error('Sync error:', error);
-      res.status(500).json({ 
-        error: 'Failed to sync to Second Brain',
-        errorMsg: error.message || 'Sync write error'
-      });
+      res.status(500).json({ error: 'Failed to sync to Second Brain', errorMsg: error.message || 'Sync write error' });
     }
   });
   
   app.post('/api/khittara/sync', async (req, res) => {
     try {
       const { tableData } = req.body;
-      if (!tableData) {
-        return res.status(400).json({ error: 'No table data provided for sync' });
-      }
-      const filePath = path.join(process.cwd(), 'khittara.md');
-      let content = await fs.readFile(filePath, 'utf-8');
-      
+      if (!tableData) return res.status(400).json({ error: 'No table data provided for sync' });
+      let content = await fs.readFile(BRAIN_FILE, 'utf-8');
       const targetHeader = '## 2D Historical Logs';
       const cleanTable = String(tableData).replace(/```markdown\n|```/g, '').trim();
-      
       const logEntry = `\n\n### Batch Sync: ${new Date().toLocaleDateString()}\n${cleanTable}\n`;
 
       if (content.includes(targetHeader)) {
         const parts = content.split(targetHeader);
         const updatedContent = parts[0] + targetHeader + logEntry + parts[1];
-        await fs.writeFile(filePath, updatedContent, 'utf-8');
+        await fs.writeFile(BRAIN_FILE, updatedContent, 'utf-8');
       } else {
-        // Create section if not exists
-        await fs.appendFile(filePath, `\n\n--- \n\n${targetHeader}${logEntry}`, 'utf-8');
+        await fs.appendFile(BRAIN_FILE, `\n\n--- \n\n${targetHeader}${logEntry}`, 'utf-8');
       }
-      
       res.json({ success: true });
     } catch (error: any) {
       console.error('Khittara Sync error:', error);
-      res.status(500).json({ 
-        error: 'Failed to sync to Khittara Knowledge Base',
-        errorMsg: error.message || 'Sync write error'
-      });
+      res.status(500).json({ error: 'Failed to sync to Khittara Knowledge Base', errorMsg: error.message || 'Sync write error' });
     }
   });
 
@@ -370,10 +378,7 @@ async function startServer() {
   // Vite middleware for development
   if (process.env.NODE_ENV !== 'production') {
     const vite = await createViteServer({
-      server: { 
-        middlewareMode: true,
-        hmr: false, // Suppress WebSocket errors in environment
-      },
+      server: { middlewareMode: true, hmr: false },
       appType: 'spa',
       logLevel: 'error',
     });
@@ -381,9 +386,7 @@ async function startServer() {
   } else {
     const distPath = path.join(process.cwd(), 'dist');
     app.use(express.static(distPath));
-    app.get('*', (req, res) => {
-      res.sendFile(path.join(distPath, 'index.html'));
-    });
+    app.get('*', (req, res) => { res.sendFile(path.join(distPath, 'index.html')); });
   }
 
   app.listen(PORT, '0.0.0.0', () => {
