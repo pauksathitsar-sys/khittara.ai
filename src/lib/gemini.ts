@@ -24,9 +24,36 @@ export class GeminiService {
       return "Critical failure: AI Core not initialized. Check your API key in Settings.";
     }
 
+    // ==========================================
+    // 2D HISTORICAL DATA FETCH LOGIC FOR GITHUB PAGES
+    // ==========================================
+    let historicalDataString = "[]";
+    try {
+      // GitHub Pages ရဲ့ root (သို့မဟုတ် public folder) ထဲက json ဖိုင်ကို လှမ်းဖတ်ခြင်း
+      const dataResponse = await fetch('/2d_historical_data.json');
+      if (dataResponse.ok) {
+        const jsonData = await dataResponse.json();
+        historicalDataString = JSON.stringify(jsonData);
+      }
+    } catch (fetchError) {
+      console.warn("⚠️ Could not load 2d_historical_data.json automatically:", fetchError);
+    }
+
+    // Khittara AI ရဲ့ ပင်ကိုယ် Character နှင့် 2D ဒေတာများကို ပေါင်းစပ်ပြီး Master Instruction တည်ဆောက်ခြင်း
+    const masterInstruction = `
+      မင်းရဲ့အမည်က Khittara AI (ခေတ္တရာ အိုင်အေ) ဖြစ်သည်။ မင်းက မြန်မာနိုင်ငံမှ လူငယ်ဆော့ဖ်ဝဲလ်တီထွင်သူ မင်းသစ်စာအောင် (Min Thit Sar Aung) ဖန်တီးတည်ဆောက်ထားသော ခေတ်မီဆန်းသစ်သည့် AI Digital Assistant ဖြစ်သည်။
+      
+      [အရေးကြီးသော တာဝန်]
+      အသုံးပြုသူက ၂D (သို့မဟုတ်) ထိုင်းစတော့အိတ်ချိန်း (SET Index) သမိုင်းကြောင်းဆိုင်ရာ အချက်အလက်များကို မေးမြန်းလာပါက အောက်တွင် ပေးထားသော JSON ဒေတာစုကိုသာ သေချာစွာ ကြည့်ရှုပြီး အမှန်ကန်ဆုံးနှင့် အတိကျဆုံး ပြန်လည်ဖြေကြားပေးပါ။
+      ဂဏန်းအချက်အလက်များကို မသိပါက မှန်းဆပြီး ဉာဏ်ဆင်လိမ်လည်ဖြေကြားခြင်း လုံးဝ (လုံးဝ) မပြုလုပ်ရ။ ဒေတာထဲတွင် မပါရှိသောနေ့များ (ဥပမာ စနေ၊ တနင်္ဂနွေ နှင့် ရုံးပိတ်ရက်များ) မေးလာပါက 'CLOSE' သို့မဟုတ် ဒေတာမရှိကြောင်း သာ သေသပ်စွာ ဖြေကြားပါ။
+
+      [၂D သမိုင်းကြောင်း ဒေတာစု (2D HISTORICAL DATASET)]
+      ${historicalDataString}
+
+      ${systemInstruction || ""}
+    `.trim();
+
     const contents = messages.map(m => {
-      // In @google/genai, roles are 'user' and 'model' (or just text strings in some cases)
-      // The SDK handles content conversion usually, but let's be explicit
       return {
         role: m.role === "user" ? "user" : "model",
         parts: [{ text: m.content }]
@@ -34,7 +61,8 @@ export class GeminiService {
     });
 
     try {
-      return await this.executeCall(model, contents, systemInstruction);
+      // ပြင်ဆင်ပြီးသား masterInstruction ကို ထည့်သွင်းခေါ်ယူခြင်း
+      return await this.executeCall(model, contents, masterInstruction);
     } catch (error: any) {
       console.error(`❌ Primary model (${model}) failed:`, error);
       
@@ -42,7 +70,7 @@ export class GeminiService {
       if (model !== fallbackModel) {
         try {
           console.log(`⚡ Falling back to ${fallbackModel}...`);
-          return await this.executeCall(fallbackModel, contents, systemInstruction);
+          return await this.executeCall(fallbackModel, contents, masterInstruction);
         } catch (fallbackError: any) {
           console.error("❌ Fallback failed:", fallbackError);
           return `Error: ${fallbackError.message || "Request failed."}`;
@@ -62,7 +90,7 @@ export class GeminiService {
         contents,
         config: {
           systemInstruction: systemInstruction,
-          temperature: 0.9,
+          temperature: 0.7, // တိကျတဲ့ ဒေတာတွေဖြေရမှာမို့ temperature ကို 0.9 ကနေ 0.7 သို့ အနည်းငယ်လျှော့ချထားပါတယ်
           topP: 1,
           topK: 1,
         }
@@ -83,7 +111,6 @@ export class GeminiService {
 
       return response.text || "No response received.";
     } catch (error) {
-      // Report failure latency even on error if possible
       const latency = Date.now() - startTime;
       throw error;
     }
@@ -131,7 +158,6 @@ export class GeminiService {
     }
   }
 }
-
 
 async function fileToBase64(file: File): Promise<string> {
   return new Promise((resolve, reject) => {
