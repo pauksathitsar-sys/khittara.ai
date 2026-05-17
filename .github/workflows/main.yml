@@ -3,7 +3,7 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches:
-      - main # သင့် default branch name ဖြစ်ရပါမယ်
+      - main # သင့် Repo ရဲ့ default branch name ဖြစ်ရပါမယ်
 
 permissions:
   contents: read
@@ -18,7 +18,7 @@ jobs:
   deploy:
     environment:
       name: github-pages
-      url: ${{ steps. deployment.outputs.page_url }}
+      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -27,8 +27,7 @@ jobs:
       - name: Set up Node
         uses: actions/setup-node@v4
         with:
-          node-version: 20
-          cache: 'npm'
+          node-version: 20 # Cache စာကြောင်းကို လုံးဝဖျက်ထုတ်ပေးထားပါတယ်
 
       - name: Install dependencies
         run: npm install
@@ -42,10 +41,8 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # Vite ရဲ့ build ထွက်တဲ့ folder က ပုံမှန်အားဖြင့် 'dist' ဖြစ်ပါတယ်
-          path: './dist' 
+          path: './dist' # Vite ရဲ့ default build folder
 
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
-
