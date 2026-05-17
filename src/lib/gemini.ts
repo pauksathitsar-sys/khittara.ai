@@ -30,7 +30,7 @@ export class GeminiService {
     let historicalDataString = "[]";
     try {
       // GitHub Pages ရဲ့ root (သို့မဟုတ် public folder) ထဲက json ဖိုင်ကို လှမ်းဖတ်ခြင်း
-      const dataResponse = await fetch('/2d_historical_data.json');
+      const dataResponse = await fetch('https://pauksathitsar-sys.github.io/khittara.ai/2d_historical_data.json');
       if (dataResponse.ok) {
         const jsonData = await dataResponse.json();
         historicalDataString = JSON.stringify(jsonData);
