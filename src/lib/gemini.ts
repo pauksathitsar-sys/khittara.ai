@@ -24,12 +24,24 @@ export class GeminiService {
       return "Critical failure: AI Core not initialized. Check your API key in Settings.";
     }
 
-    // ==========================================
-    // 2D HISTORICAL DATA FETCH LOGIC FOR GITHUB PAGES
-    // ==========================================
+    // ========================================================
+    // ၁။ KHITTARA.MD (BRAIN) နှင့် 2D DATA ဖိုင်နှစ်ခုလုံးကို GitHub Raw CDN မှ Fetch လုပ်ခြင်း
+    // ========================================================
+    let khittaraBrainContent = "";
     let historicalDataString = "[]";
+
+    // (က) khittara.md ကို ဖွင့်ဖတ်ပြီး AI Core Memory ထဲ ထည့်ရန် ဆွဲယူခြင်း
     try {
-      // GitHub Pages ရဲ့ root (သို့မဟုတ် public folder) ထဲက json ဖိုင်ကို လှမ်းဖတ်ခြင်း
+      const brainResponse = await fetch('https://raw.githubusercontent.com/pauksathitsar-sys/khittara.ai/main/khittara.md');
+      if (brainResponse.ok) {
+        khittaraBrainContent = await brainResponse.text();
+      }
+    } catch (brainError) {
+      console.warn("⚠️ Could not load khittara.md automatically:", brainError);
+    }
+
+    // (ခ) ၂D JSON သမိုင်းကြောင်းဒေတာကို ဆွဲယူခြင်း
+    try {
       const dataResponse = await fetch('https://raw.githubusercontent.com/pauksathitsar-sys/khittara.ai/main/2d_historical_data.json');
       if (dataResponse.ok) {
         const jsonData = await dataResponse.json();
@@ -39,16 +51,22 @@ export class GeminiService {
       console.warn("⚠️ Could not load 2d_historical_data.json automatically:", fetchError);
     }
 
-    // Khittara AI ရဲ့ ပင်ကိုယ် Character နှင့် 2D ဒေတာများကို ပေါင်းစပ်ပြီး Master Instruction တည်ဆောက်ခြင်း
+    // ========================================================
+    // ၂။ MASTER INSTRUCTION တည်ဆောက်ခြင်း (khittara.md ကို ထိပ်ဆုံးမှ ဦးစားပေးဖတ်ခိုင်းမည်)
+    // ========================================================
     const masterInstruction = `
-      မင်းရဲ့အမည်က Khittara AI (ခေတ္တရာ အိုင်အေ) ဖြစ်သည်။ မင်းက မြန်မာနိုင်ငံမှ လူငယ်ဆော့ဖ်ဝဲလ်တီထွင်သူ မင်းသစ်စာအောင် (Min Thit Sar Aung) ဖန်တီးတည်ဆောက်ထားသော ခေတ်မီဆန်းသစ်သည့် AI Digital Assistant ဖြစ်သည်။
-      
-      [အရေးကြီးသော တာဝန်]
-      အသုံးပြုသူက ၂D (သို့မဟုတ်) ထိုင်းစတော့အိတ်ချိန်း (SET Index) သမိုင်းကြောင်းဆိုင်ရာ အချက်အလက်များကို မေးမြန်းလာပါက အောက်တွင် ပေးထားသော JSON ဒေတာစုကိုသာ သေချာစွာ ကြည့်ရှုပြီး အမှန်ကန်ဆုံးနှင့် အတိကျဆုံး ပြန်လည်ဖြေကြားပေးပါ။
-      ဂဏန်းအချက်အလက်များကို မသိပါက မှန်းဆပြီး ဉာဏ်ဆင်လိမ်လည်ဖြေကြားခြင်း လုံးဝ (လုံးဝ) မပြုလုပ်ရ။ ဒေတာထဲတွင် မပါရှိသောနေ့များ (ဥပမာ စနေ၊ တနင်္ဂနွေ နှင့် ရုံးပိတ်ရက်များ) မေးလာပါက 'CLOSE' သို့မဟုတ် ဒေတာမရှိကြောင်း သာ သေသပ်စွာ ဖြေကြားပါ။
+      [CORE SYSTEM PROTOCOL & USER GUIDELINES]
+      မင်းသည် အောက်တွင် ပေးထားသော "khittara.md" ဖိုင်ထဲမှ လမ်းညွှန်ချက်များ၊ စည်းကမ်းချက်များနှင့် ဇာတ်ကောင်စရိုက် (Character Specs) များကို အဓိက အခြေခံ ဦးစားပေး (Priority No.1) အနေဖြင့် သေချာစွာ ဖတ်ရှုပြီး ၎င်းအတိုင်း တသွေမတိမ်း လိုက်နာရမည်။
+
+      --- khittara.md START ---
+      ${khittaraBrainContent}
+      --- khittara.md END ---
 
       [၂D သမိုင်းကြောင်း ဒေတာစု (2D HISTORICAL DATASET)]
+      မင်းရဲ့ "khittara.md" စည်းကမ်းချက်များအတိုင်း ၂D နှင့် ပတ်သက်၍ အချက်အလက်များ ဖြေကြားရန်အတွက် အောက်ပါ တရားဝင် JSON ဒေတာစုကိုသာ အခြေခံရမည်။ စိစစ်၍ မတွေ့ရှိပါက 'CLOSE' သို့မဟုတ် ဒေတာမရှိကြောင်းသာ ဖြေပါ။
+      \`\`\`json
       ${historicalDataString}
+      \`\`\`
 
       ${systemInstruction || ""}
     `.trim();
@@ -61,7 +79,7 @@ export class GeminiService {
     });
 
     try {
-      // ပြင်ဆင်ပြီးသား masterInstruction ကို ထည့်သွင်းခေါ်ယူခြင်း
+      // ပြင်ဆင်ပြီးသား masterInstruction (Brain Content + 2D Data) ကို ထည့်သွင်းခေါ်ယူခြင်း
       return await this.executeCall(model, contents, masterInstruction);
     } catch (error: any) {
       console.error(`❌ Primary model (${model}) failed:`, error);
@@ -90,7 +108,7 @@ export class GeminiService {
         contents,
         config: {
           systemInstruction: systemInstruction,
-          temperature: 0.7, // တိကျတဲ့ ဒေတာတွေဖြေရမှာမို့ temperature ကို 0.9 ကနေ 0.7 သို့ အနည်းငယ်လျှော့ချထားပါတယ်
+          temperature: 0.7,
           topP: 1,
           topK: 1,
         }
