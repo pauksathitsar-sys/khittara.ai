@@ -1,19 +1,3325 @@
 [
-  { "date": "2024-01-01", "morning_set": "1415.85", "morning_value": "35234.33", "morning_2d": "54", "evening_set": "1418.52", "evening_value": "45632.78", "evening_2d": "22" },
-  { "date": "2024-01-02", "morning_set": "1420.12", "morning_value": "28123.45", "morning_2d": "23", "evening_set": "1425.67", "evening_value": "39245.89", "evening_2d": "75" },
-  { "date": "2024-01-03", "morning_set": "1418.34", "morning_value": "31456.21", "morning_2d": "46", "evening_set": "1412.09", "evening_value": "42367.54", "evening_2d": "97" },
-  { "date": "2024-01-04", "morning_set": "1410.56", "morning_value": "29567.80", "morning_2d": "67", "evening_set": "1415.23", "evening_value": "35678.91", "evening_2d": "38" },
-  { "date": "2024-01-05", "morning_set": "1412.78", "morning_value": "32456.12", "morning_2d": "86", "evening_set": "1419.45", "evening_value": "40123.45", "evening_2d": "53" },
-  { "date": "2025-01-02", "morning_set": "1461.34", "morning_value": "45678.92", "morning_2d": "48", "evening_set": "1465.71", "evening_value": "51234.36", "evening_2d": "14" },
-  { "date": "2025-01-03", "morning_set": "1458.20", "morning_value": "38945.67", "morning_2d": "07", "evening_set": "1455.42", "evening_value": "42367.89", "evening_2d": "27" },
-  { "date": "2025-01-06", "morning_set": "1452.15", "morning_value": "35123.44", "morning_2d": "54", "evening_set": "1450.88", "evening_value": "41234.56", "evening_2d": "84" },
-  { "date": "2025-01-07", "morning_set": "1448.92", "morning_value": "28945.61", "morning_2d": "21", "evening_set": "1445.33", "evening_value": "39245.82", "evening_2d": "32" },
-  { "date": "2026-05-01", "morning_set": "1385.12", "morning_value": "41234.56", "morning_2d": "24", "evening_set": "1388.45", "evening_value": "52345.67", "evening_2d": "55" },
-  { "date": "2026-05-02", "morning_set": "1390.34", "morning_value": "38456.78", "morning_2d": "46", "evening_set": "1395.21", "evening_value": "48567.89", "evening_2d": "17" },
-  { "date": "2026-05-03", "morning_set": "1392.45", "morning_value": "35678.90", "morning_2d": "58", "evening_set": "1389.12", "evening_value": "45789.01", "evening_2d": "29" },
-  { "date": "2026-05-04", "morning_set": "1387.56", "morning_value": "32145.67", "morning_2d": "65", "evening_set": "1382.34", "evening_value": "42356.78", "evening_2d": "46" },
-  { "date": "2026-05-05", "morning_set": "1380.12", "morning_value": "28123.45", "morning_2d": "23", "evening_set": "1378.45", "evening_value": "39245.89", "evening_2d": "55" },
-  { "date": "2026-05-12", "morning_set": "1372.45", "morning_value": "25123.45", "morning_2d": "53", "evening_set": "1370.21", "evening_value": "35245.89", "evening_2d": "15" },
-  { "date": "2026-05-13", "morning_set": "1368.12", "morning_value": "22123.45", "morning_2d": "23", "evening_set": "1365.45", "evening_value": "32245.89", "evening_2d": "55" },
-  { "date": "2026-05-14", "morning_set": "1362.45", "morning_value": "20123.45", "morning_2d": "53", "evening_set": "1360.21", "evening_value": "30245.89", "evening_2d": "15" }
+  {
+    "date": "2025-01-02",
+    "day": "Thursday",
+    "morning_set": "1381.25",
+    "morning_value": "20307.62",
+    "morning_2d": "57",
+    "evening_set": "1379.85",
+    "evening_value": "36852.83",
+    "evening_2d": "52"
+  },
+  {
+    "date": "2025-01-03",
+    "day": "Friday",
+    "morning_set": "1383.92",
+    "morning_value": "15125.42",
+    "morning_2d": "25",
+    "evening_set": "1384.76",
+    "evening_value": "29604.22",
+    "evening_2d": "64"
+  },
+  {
+    "date": "2025-01-06",
+    "day": "Monday",
+    "morning_set": "1379.07",
+    "morning_value": "20539.78",
+    "morning_2d": "79",
+    "evening_set": "1372.65",
+    "evening_value": "37212.83",
+    "evening_2d": "52"
+  },
+  {
+    "date": "2025-01-07",
+    "day": "Tuesday",
+    "morning_set": "1384.55",
+    "morning_value": "17949.48",
+    "morning_2d": "59",
+    "evening_set": "1390.88",
+    "evening_value": "39006.62",
+    "evening_2d": "86"
+  },
+  {
+    "date": "2025-01-08",
+    "day": "Wednesday",
+    "morning_set": "1391.38",
+    "morning_value": "15994.84",
+    "morning_2d": "84",
+    "evening_set": "1387.72",
+    "evening_value": "35326.19",
+    "evening_2d": "26"
+  },
+  {
+    "date": "2025-01-09",
+    "day": "Thursday",
+    "morning_set": "1372.61",
+    "morning_value": "22595.17",
+    "morning_2d": "15",
+    "evening_set": "1362.97",
+    "evening_value": "46868.24",
+    "evening_2d": "78"
+  },
+  {
+    "date": "2025-01-10",
+    "day": "Friday",
+    "morning_set": "1362.62",
+    "morning_value": "22211.98",
+    "morning_2d": "21",
+    "evening_set": "1367.99",
+    "evening_value": "42718.70",
+    "evening_2d": "98"
+  },
+  {
+    "date": "2025-01-13",
+    "day": "Monday",
+    "morning_set": "1357.06",
+    "morning_value": "20625.46",
+    "morning_2d": "65",
+    "evening_set": "1354.34",
+    "evening_value": "42966.31",
+    "evening_2d": "46"
+  },
+  {
+    "date": "2025-01-14",
+    "day": "Tuesday",
+    "morning_set": "1349.82",
+    "morning_value": "32094.64",
+    "morning_2d": "24",
+    "evening_set": "1340.25",
+    "evening_value": "56434.55",
+    "evening_2d": "54"
+  },
+  {
+    "date": "2025-01-15",
+    "day": "Wednesday",
+    "morning_set": "1342.93",
+    "morning_value": "20231.16",
+    "morning_2d": "31",
+    "evening_set": "1353.17",
+    "evening_value": "44216.57",
+    "evening_2d": "76"
+  },
+  {
+    "date": "2025-01-16",
+    "day": "Thursday",
+    "morning_set": "1348.55",
+    "morning_value": "20269.57",
+    "morning_2d": "59",
+    "evening_set": "1352.56",
+    "evening_value": "40377.07",
+    "evening_2d": "67"
+  },
+  {
+    "date": "2025-01-17",
+    "day": "Friday",
+    "morning_set": "1350.58",
+    "morning_value": "16 Christian593.16",
+    "morning_2d": "83",
+    "evening_set": "1340.63",
+    "evening_value": "37538.15",
+    "evening_2d": "38"
+  },
+  {
+    "date": "2025-01-20",
+    "day": "Monday",
+    "morning_set": "1342.34",
+    "morning_value": "13695.36",
+    "morning_2d": "45",
+    "evening_set": "1340.50",
+    "evening_value": "25982.06",
+    "evening_2d": "02"
+  },
+  {
+    "date": "2025-01-21",
+    "day": "Tuesday",
+    "morning_set": "1355.00",
+    "morning_value": "19622.25",
+    "morning_2d": "02",
+    "evening_set": "1352.53",
+    "evening_value": "38004.05",
+    "evening_2d": "34"
+  },
+  {
+    "date": "2025-01-22",
+    "day": "Wednesday",
+    "morning_set": "1359.68",
+    "morning_value": "21212.71",
+    "morning_2d": "82",
+    "evening_set": "1361.77",
+    "evening_value": "43896.02",
+    "evening_2d": "76"
+  },
+  {
+    "date": "2025-01-23",
+    "day": "Thursday",
+    "morning_set": "1356.17",
+    "morning_value": "16398.82",
+    "morning_2d": "78",
+    "evening_set": "1344.17",
+    "evening_value": "34420.86",
+    "evening_2d": "70"
+  },
+  {
+    "date": "2025-01-24",
+    "day": "Friday",
+    "morning_set": "1347.06",
+    "morning_value": "15180.18",
+    "morning_2d": "60",
+    "evening_set": "1354.07",
+    "evening_value": "30792.25",
+    "evening_2d": "72"
+  },
+  {
+    "date": "2025-01-27",
+    "day": "Monday",
+    "morning_set": "1349.09",
+    "morning_value": "15125.32",
+    "morning_2d": "95",
+    "evening_set": "1340.94",
+    "evening_value": "30685.23",
+    "evening_2d": "45"
+  },
+  {
+    "date": "2025-01-28",
+    "day": "Tuesday",
+    "morning_set": "1338.13",
+    "morning_value": "17236.21",
+    "morning_2d": "36",
+    "evening_set": "1345.77",
+    "evening_value": "36715.88",
+    "evening_2d": "75"
+  },
+  {
+    "date": "2025-01-29",
+    "day": "Wednesday",
+    "morning_set": "1342.96",
+    "morning_value": "14932.46",
+    "morning_2d": "62",
+    "evening_set": "1343.19",
+    "evening_value": "27349.69",
+    "evening_2d": "99"
+  },
+  {
+    "date": "2025-01-30",
+    "day": "Thursday",
+    "morning_set": "1335.29",
+    "morning_value": "16729.73",
+    "morning_2d": "99",
+    "evening_set": "1335.64",
+    "evening_value": "29535.48",
+    "evening_2d": "45"
+  },
+  {
+    "date": "2025-01-31",
+    "day": "Friday",
+    "morning_set": "1324.13",
+    "morning_value": "24164.63",
+    "morning_2d": "34",
+    "evening_set": "1314.50",
+    "evening_value": "53362.68",
+    "evening_2d": "02"
+  }
 ]
+[
+  {
+    "date": "2025-02-03",
+    "day": "Monday",
+    "morning_set": "1290.04",
+    "morning_value": "33365.21",
+    "morning_2d": "45",
+    "evening_set": "1304.39",
+    "evening_value": "54212.17",
+    "evening_2d": "92"
+  },
+  {
+    "date": "2025-02-04",
+    "day": "Tuesday",
+    "morning_set": "1306.65",
+    "morning_value": "20493.76",
+    "morning_2d": "53",
+    "evening_set": "1301.02",
+    "evening_value": "41678.41",
+    "evening_2d": "28"
+  },
+  {
+    "date": "2025-02-05",
+    "day": "Wednesday",
+    "morning_set": "1289.94",
+    "morning_value": "20712.90",
+    "morning_2d": "42",
+    "evening_set": "1286.74",
+    "evening_value": "42226.09",
+    "evening_2d": "46"
+  },
+  {
+    "date": "2025-02-06",
+    "day": "Thursday",
+    "morning_set": "1281.73",
+    "morning_value": "19235.92",
+    "morning_2d": "35",
+    "evening_set": "1262.07",
+    "evening_value": "48143.21",
+    "evening_2d": "73"
+  },
+  {
+    "date": "2025-02-07",
+    "day": "Friday",
+    "morning_set": "1263.08",
+    "morning_value": "25068.16",
+    "morning_2d": "88",
+    "evening_set": "1282.09",
+    "evening_value": "57593.92",
+    "evening_2d": "93"
+  },
+  {
+    "date": "2025-02-10",
+    "day": "Monday",
+    "morning_set": "1272.91",
+    "morning_value": "24931.76",
+    "morning_2d": "11",
+    "evening_set": "1270.49",
+    "evening_value": "43206.59",
+    "evening_2d": "96"
+  },
+  {
+    "date": "2025-02-11",
+    "day": "Tuesday",
+    "morning_set": "1279.35",
+    "morning_value": "17955.38",
+    "morning_2d": "55",
+    "evening_set": "1283.97",
+    "evening_value": "38989.02",
+    "evening_2d": "79"
+  },
+  {
+    "date": "2025-02-13",
+    "day": "Thursday",
+    "morning_set": "1294.85",
+    "morning_value": "26933.40",
+    "morning_2d": "53",
+    "evening_set": "1284.11",
+    "evening_value": "53123.74",
+    "evening_2d": "13"
+  },
+  {
+    "date": "2025-02-14",
+    "day": "Friday",
+    "morning_set": "1281.75",
+    "morning_value": "19469.26",
+    "morning_2d": "59",
+    "evening_set": "1272.10",
+    "evening_value": "50036.21",
+    "evening_2d": "06"
+  },
+  {
+    "date": "2025-02-17",
+    "day": "Monday",
+    "morning_set": "1248.39",
+    "morning_value": "33866.09",
+    "morning_2d": "96",
+    "evening_set": "1256.48",
+    "evening_value": "56346.06",
+    "evening_2d": "86"
+  },
+  {
+    "date": "2025-02-18",
+    "day": "Tuesday",
+    "morning_set": "1260.85",
+    "morning_value": "22746.65",
+    "morning_2d": "56",
+    "evening_set": "1257.48",
+    "evening_value": "47358.57",
+    "evening_2d": "88"
+  },
+  {
+    "date": "2025-02-19",
+    "day": "Wednesday",
+    "morning_set": "1261.91",
+    "morning_value": "26684.55",
+    "morning_2d": "14",
+    "evening_set": "1262.27",
+    "evening_value": "52617.62",
+    "evening_2d": "77"
+  },
+  {
+    "date": "2025-02-20",
+    "day": "Thursday",
+    "morning_set": "1255.62",
+    "morning_value": "27358.66",
+    "morning_2d": "28",
+    "evening_set": "1245.61",
+    "evening_value": "56186.43",
+    "evening_2d": "16"
+  },
+  {
+    "date": "2025-02-21",
+    "day": "Friday",
+    "morning_set": "1247.47",
+    "morning_value": "26501.77",
+    "morning_2d": "71",
+    "evening_set": "1246.21",
+    "evening_value": "48456.57",
+    "evening_2d": "16"
+  },
+  {
+    "date": "2025-02-24",
+    "day": "Monday",
+    "morning_set": "1230.69",
+    "morning_value": "22049.20",
+    "morning_2d": "99",
+    "evening_set": "1235.85",
+    "evening_value": "42206.62",
+    "evening_2d": "56"
+  },
+  {
+    "date": "2025-02-25",
+    "day": "Tuesday",
+    "morning_set": "1217.68",
+    "morning_value": "26548.87",
+    "morning_2d": "88",
+    "evening_set": "1206.39",
+    "evening_value": "50189.15",
+    "evening_2d": "99"
+  },
+  {
+    "date": "2025-02-26",
+    "day": "Wednesday",
+    "morning_set": "1217.06",
+    "morning_value": "25252.52",
+    "morning_2d": "62",
+    "evening_set": "1231.14",
+    "evening_value": "62528.51",
+    "evening_2d": "48"
+  },
+  {
+    "date": "2025-02-27",
+    "day": "Thursday",
+    "morning_set": "1220.37",
+    "morning_value": "32718.95",
+    "morning_2d": "78",
+    "evening_set": "1215.73",
+    "evening_value": "56035.29",
+    "evening_2d": "35"
+  },
+  {
+    "date": "2025-02-28",
+    "day": "Friday",
+    "morning_set": "1195.26",
+    "morning_value": "29025.74",
+    "morning_2d": "65",
+    "evening_set": "1203.72",
+    "evening_value": "74436.98",
+    "evening_2d": "26"
+  }
+]
+[
+  {
+    "date": "2025-03-03",
+    "day": "Monday",
+    "morning_set": "1193.83",
+    "morning_value": "23463.47",
+    "morning_2d": "33",
+    "evening_set": "1188.41",
+    "evening_value": "45011.92",
+    "evening_2d": "11"
+  },
+  {
+    "date": "2025-03-04",
+    "day": "Tuesday",
+    "morning_set": "1191.91",
+    "morning_value": "18368.26",
+    "morning_2d": "18",
+    "evening_set": "1177.64",
+    "evening_value": "42016.45",
+    "evening_2d": "46"
+  },
+  {
+    "date": "2025-03-05",
+    "day": "Wednesday",
+    "morning_set": "1190.10",
+    "morning_value": "19869.31",
+    "morning_2d": "09",
+    "evening_set": "1206.96",
+    "evening_value": "50706.03",
+    "evening_2d": "66"
+  },
+  {
+    "date": "2025-03-06",
+    "day": "Thursday",
+    "morning_set": "1203.60",
+    "morning_value": "26132.15",
+    "morning_2d": "02",
+    "evening_set": "1189.55",
+    "evening_value": "47199.92",
+    "evening_2d": "59"
+  },
+  {
+    "date": "2025-03-07",
+    "day": "Friday",
+    "morning_set": "1194.92",
+    "morning_value": "18176.08",
+    "morning_2d": "26",
+    "evening_set": "1202.03",
+    "evening_value": "37805.49",
+    "evening_2d": "35"
+  },
+  {
+    "date": "2025-03-10",
+    "day": "Monday",
+    "morning_set": "1187.27",
+    "morning_value": "16247.13",
+    "morning_2d": "77",
+    "evening_set": "1177.44",
+    "evening_value": "34257.69",
+    "evening_2d": "47"
+  },
+  {
+    "date": "2025-03-11",
+    "day": "Tuesday",
+    "morning_set": "1169.99",
+    "morning_value": "20005.44",
+    "morning_2d": "95",
+    "evening_set": "1187.63",
+    "evening_value": "49522.05",
+    "evening_2d": "32"
+  },
+  {
+    "date": "2025-03-12",
+    "day": "Wednesday",
+    "morning_set": "1170.60",
+    "morning_value": "20693.96",
+    "morning_2d": "03",
+    "evening_set": "1160.06",
+    "evening_value": "46281.66",
+    "evening_2d": "61"
+  },
+  {
+    "date": "2025-03-13",
+    "day": "Thursday",
+    "morning_set": "1162.97",
+    "morning_value": "17838.40",
+    "morning_2d": "78",
+    "evening_set": "1159.64",
+    "evening_value": "32461.80",
+    "evening_2d": "41"
+  },
+  {
+    "date": "2025-03-14",
+    "day": "Friday",
+    "morning_set": "1171.44",
+    "morning_value": "17922.18",
+    "morning_2d": "42",
+    "evening_set": "1173.76",
+    "evening_value": "38598.05",
+    "evening_2d": "68"
+  },
+  {
+    "date": "2025-03-17",
+    "day": "Monday",
+    "morning_set": "1172.42",
+    "morning_value": "20846.17",
+    "morning_2d": "26",
+    "evening_set": "1170.20",
+    "evening_value": "35904.16",
+    "evening_2d": "04"
+  },
+  {
+    "date": "2025-03-18",
+    "day": "Tuesday",
+    "morning_set": "1178.32",
+    "morning_value": "18630.04",
+    "morning_2d": "20",
+    "evening_set": "1176.17",
+    "evening_value": "39013.98",
+    "evening_2d": "73"
+  },
+  {
+    "date": "2025-03-19",
+    "day": "Wednesday",
+    "morning_set": "1190.86",
+    "morning_value": "22661.25",
+    "morning_2d": "61",
+    "evening_set": "1189.66",
+    "evening_value": "42722.37",
+    "evening_2d": "62"
+  },
+  {
+    "date": "2025-03-20",
+    "day": "Thursday",
+    "morning_set": "1194.69",
+    "morning_value": "19982.29",
+    "morning_2d": "92",
+    "evening_set": "1181.71",
+    "evening_value": "44627.97",
+    "evening_2d": "17"
+  },
+  {
+    "date": "2025-03-21",
+    "day": "Friday",
+    "morning_set": "1183.29",
+    "morning_value": "19958.57",
+    "morning_2d": "98",
+    "evening_set": "1186.61",
+    "evening_value": "47293.40",
+    "evening_2d": "13"
+  },
+  {
+    "date": "2025-03-24",
+    "day": "Monday",
+    "morning_set": "1183.72",
+    "morning_value": "10383.20",
+    "morning_2d": "23",
+    "evening_set": "1190.06",
+    "evening_value": "23373.33",
+    "evening_2d": "63"
+  },
+  {
+    "date": "2025-03-25",
+    "day": "Tuesday",
+    "morning_set": "1183.87",
+    "morning_value": "16925.17",
+    "morning_2d": "75",
+    "evening_set": "1184.93",
+    "evening_value": "30766.38",
+    "evening_2d": "36"
+  },
+  {
+    "date": "2025-03-26",
+    "day": "Wednesday",
+    "morning_set": "1191.10",
+    "morning_value": "13997.86",
+    "morning_2d": "07",
+    "evening_set": "1190.36",
+    "evening_value": "26578.82",
+    "evening_2d": "68"
+  },
+  {
+    "date": "2025-03-27",
+    "day": "Thursday",
+    "morning_set": "1189.17",
+    "morning_value": "15064.65",
+    "morning_2d": "74",
+    "evening_set": "1187.90",
+    "evening_value": "27605.35",
+    "evening_2d": "05"
+  },
+  {
+    "date": "2025-03-31",
+    "day": "Monday",
+    "morning_set": "1158.04",
+    "morning_value": "23430.93",
+    "morning_2d": "40",
+    "evening_set": "1158.09",
+    "evening_value": "40260.73",
+    "evening_2d": "90"
+  }
+]
+[
+  {
+    "date": "2025-04-01",
+    "day": "Tuesday",
+    "morning_set": "1173.83",
+    "morning_value": "13920.35",
+    "morning_2d": "30",
+    "evening_set": "1168.02",
+    "evening_value": "26391.17",
+    "evening_2d": "21"
+  },
+  {
+    "date": "2025-04-02",
+    "day": "Wednesday",
+    "morning_set": "1171.06",
+    "morning_value": "11737.23",
+    "morning_2d": "67",
+    "evening_set": "1172.69",
+    "evening_value": "24952.72",
+    "evening_2d": "92"
+  },
+  {
+    "date": "2025-04-03",
+    "day": "Thursday",
+    "morning_set": "1160.74",
+    "morning_value": "23103.53",
+    "morning_2d": "43",
+    "evening_set": "1161.81",
+    "evening_value": "41064.80",
+    "evening_2d": "14"
+  },
+  {
+    "date": "2025-04-04",
+    "day": "Friday",
+    "morning_set": "1131.56",
+    "morning_value": "27775.88",
+    "morning_2d": "65",
+    "evening_set": "125.21",
+    "evening_value": "48286.09",
+    "evening_2d": "16"
+  },
+  {
+    "date": "2025-04-08",
+    "day": "Tuesday",
+    "morning_set": "1077.48",
+    "morning_value": "39711.85",
+    "morning_2d": "81",
+    "evening_set": "1074.59",
+    "evening_value": "66714.48",
+    "evening_2d": "94"
+  },
+  {
+    "date": "2025-04-09",
+    "day": "Wednesday",
+    "morning_set": "1065.61",
+    "morning_value": "21518.26",
+    "morning_2d": "18",
+    "evening_set": "1088.18",
+    "evening_value": "50884.78",
+    "evening_2d": "84"
+  },
+  {
+    "date": "2025-04-10",
+    "day": "Thursday",
+    "morning_set": "1136.58",
+    "morning_value": "27795.67",
+    "morning_2d": "85",
+    "evening_set": "1133.95",
+    "evening_value": "50222.48",
+    "evening_2d": "52"
+  },
+  {
+    "date": "2025-04-11",
+    "day": "Friday",
+    "morning_set": "1129.98",
+    "morning_value": "18738.57",
+    "morning_2d": "88",
+    "evening_set": "1128.66",
+    "evening_value": "34662.31",
+    "evening_2d": "62"
+  },
+  {
+    "date": "2025-04-16",
+    "day": "Wednesday",
+    "morning_set": "1128.14",
+    "morning_value": "21550.77",
+    "morning_2d": "40",
+    "evening_set": "1138.90",
+    "evening_value": "41200.11",
+    "evening_2d": "00"
+  },
+  {
+    "date": "2025-04-17",
+    "day": "Thursday",
+    "morning_set": "1137.81",
+    "morning_value": "15465.74",
+    "morning_2d": "15",
+    "evening_set": "1141.28",
+    "evening_value": "29646.08",
+    "evening_2d": "86"
+  },
+  {
+    "date": "2025-04-18",
+    "day": "Friday",
+    "morning_set": "1145.16",
+    "morning_value": "13789.27",
+    "morning_2d": "69",
+    "evening_set": "1150.95",
+    "evening_value": "27673.54",
+    "evening_2d": "53"
+  },
+  {
+    "date": "2025-04-21",
+    "day": "Monday",
+    "morning_set": "1147.16",
+    "morning_value": "15405.07",
+    "morning_2d": "65",
+    "evening_set": "1134.71",
+    "evening_value": "32465.37",
+    "evening_2d": "15"
+  },
+  {
+    "date": "2025-04-22",
+    "day": "Tuesday",
+    "morning_set": "1134.65",
+    "morning_value": "17824.64",
+    "morning_2d": "54",
+    "evening_set": "1144.05",
+    "evening_value": "35686.26",
+    "evening_2d": "56"
+  },
+  {
+    "date": "2025-04-23",
+    "day": "Wednesday",
+    "morning_set": "1156.81",
+    "morning_value": "20917.00",
+    "morning_2d": "17",
+    "evening_set": "1153.77",
+    "evening_value": "38224.25",
+    "evening_2d": "74"
+  },
+  {
+    "date": "2025-04-24",
+    "day": "Thursday",
+    "morning_set": "1150.40",
+    "morning_value": "23268.26",
+    "morning_2d": "08",
+    "evening_set": "1146.86",
+    "evening_value": "40586.79",
+    "evening_2d": "66"
+  },
+  {
+    "date": "2025-04-25",
+    "day": "Friday",
+    "morning_set": "1157.04",
+    "morning_value": "17494.44",
+    "morning_2d": "44",
+    "evening_set": "1159.00",
+    "evening_value": "33120.92",
+    "evening_2d": "00"
+  },
+  {
+    "date": "2025-04-28",
+    "day": "Monday",
+    "morning_set": "1161.70",
+    "morning_value": "15275.83",
+    "morning_2d": "05",
+    "evening_set": "1159.53",
+    "evening_value": "28459.22",
+    "evening_2d": "39"
+  },
+  {
+    "date": "2025-04-29",
+    "day": "Tuesday",
+    "morning_set": "1158.10",
+    "morning_value": "15628.97",
+    "morning_2d": "08",
+    "evening_set": "1171.12",
+    "evening_value": "35334.16",
+    "evening_2d": "24"
+  },
+  {
+    "date": "2025-04-30",
+    "day": "Wednesday",
+    "morning_set": "1181.52",
+    "morning_value": "24873.97",
+    "morning_2d": "23",
+    "evening_set": "1197.26",
+    "evening_value": "54369.45",
+    "evening_2d": "69"
+  }
+]
+[
+  {
+    "date": "2025-05-02",
+    "day": "Friday",
+    "morning_set": "1201.22",
+    "morning_value": "27337.38",
+    "morning_2d": "27",
+    "evening_set": "1198.98",
+    "evening_value": "45633.02",
+    "evening_2d": "83"
+  },
+  {
+    "date": "2025-05-06",
+    "day": "Tuesday",
+    "morning_set": "1196.09",
+    "morning_value": "21509.76",
+    "morning_2d": "99",
+    "evening_set": "1187.86",
+    "evening_value": "43577.28",
+    "evening_2d": "67"
+  },
+  {
+    "date": "2025-05-07",
+    "day": "Wednesday",
+    "morning_set": "1207.89",
+    "morning_value": "24685.93",
+    "morning_2d": "95",
+    "evening_set": "1220.27",
+    "evening_value": "53984.70",
+    "evening_2d": "74"
+  },
+  {
+    "date": "2025-05-08",
+    "day": "Thursday",
+    "morning_set": "1212.84",
+    "morning_value": "21030.67",
+    "morning_2d": "40",
+    "evening_set": "1206.59",
+    "evening_value": "42698.89",
+    "evening_2d": "98"
+  },
+  {
+    "date": "2025-05-09",
+    "day": "Friday",
+    "morning_set": "1200.92",
+    "morning_value": "18731.16",
+    "morning_2d": "21",
+    "evening_set": "1210.94",
+    "evening_value": "40958.44",
+    "evening_2d": "48"
+  },
+  {
+    "date": "2025-05-13",
+    "day": "Tuesday",
+    "morning_set": "1219.76",
+    "morning_value": "29003.30",
+    "morning_2d": "63",
+    "evening_set": "1214.39",
+    "evening_value": "50869.98",
+    "evening_2d": "99"
+  },
+  {
+    "date": "2025-05-14",
+    "day": "Wednesday",
+    "morning_set": "1211.21",
+    "morning_value": "23538.77",
+    "morning_2d": "18",
+    "evening_set": "1216.71",
+    "evening_value": "43111.85",
+    "evening_2d": "11"
+  },
+  {
+    "date": "2025-05-15",
+    "day": "Thursday",
+    "morning_set": "1199.19",
+    "morning_value": "24284.35",
+    "morning_2d": "94",
+    "evening_set": "1194.49",
+    "evening_value": "45794.74",
+    "evening_2d": "94"
+  },
+  {
+    "date": "2025-05-16",
+    "day": "Friday",
+    "morning_set": "1203.44",
+    "morning_value": "17209.35",
+    "morning_2d": "49",
+    "evening_set": "1195.77",
+    "evening_value": "36714.07",
+    "evening_2d": "74"
+  },
+  {
+    "date": "2025-05-19",
+    "day": "Monday",
+    "morning_set": "1193.62",
+    "morning_value": "20333.71",
+    "morning_2d": "23",
+    "evening_set": "1187.06",
+    "evening_value": "36743.01",
+    "evening_2d": "63"
+  },
+  {
+    "date": "2025-05-20",
+    "day": "Tuesday",
+    "morning_set": "1189.42",
+    "morning_value": "22079.19",
+    "morning_2d": "29",
+    "evening_set": "1189.14",
+    "evening_value": "46960.04",
+    "evening_2d": "40"
+  },
+  {
+    "date": "2025-05-21",
+    "day": "Wednesday",
+    "morning_set": "1190.81",
+    "morning_value": "18708.64",
+    "morning_2d": "18",
+    "evening_set": "1179.81",
+    "evening_value": "46877.46",
+    "evening_2d": "17"
+  },
+  {
+    "date": "2025-05-22",
+    "day": "Thursday",
+    "morning_set": "1178.04",
+    "morning_value": "20379.71",
+    "morning_2d": "49",
+    "evening_set": "1173.37",
+    "evening_value": "38569.91",
+    "evening_2d": "79"
+  },
+  {
+    "date": "2025-05-23",
+    "day": "Friday",
+    "morning_set": "1180.20",
+    "morning_value": "16668.68",
+    "morning_2d": "08",
+    "evening_set": "1176.36",
+    "evening_value": "34683.81",
+    "evening_2d": "63"
+  },
+  {
+    "date": "2025-05-26",
+    "day": "Monday",
+    "morning_set": "1172.11",
+    "morning_value": "12721.61",
+    "morning_2d": "11",
+    "evening_set": "1178.43",
+    "evening_value": "27690.45",
+    "evening_2d": "30"
+  },
+  {
+    "date": "2025-05-27",
+    "day": "Tuesday",
+    "morning_set": "1166.41",
+    "morning_value": "21159.84",
+    "morning_2d": "19",
+    "evening_set": "1163.42",
+    "evening_value": "34845.62",
+    "evening_2d": "25"
+  },
+  {
+    "date": "2025-05-28",
+    "day": "Wednesday",
+    "morning_set": "1165.00",
+    "morning_value": "20335.87",
+    "morning_2d": "05",
+    "evening_set": "1160.74",
+    "evening_value": "36281.33",
+    "evening_2d": "41"
+  },
+  {
+    "date": "2025-05-29",
+    "day": "Thursday",
+    "morning_set": "1169.62",
+    "morning_value": "19159.94",
+    "morning_2d": "29",
+    "evening_set": "1164.01",
+    "evening_value": "34788.54",
+    "evening_2d": "18"
+  },
+  {
+    "date": "2025-05-30",
+    "day": "Friday",
+    "morning_set": "1156.63",
+    "morning_value": "16856.85",
+    "morning_2d": "36",
+    "evening_set": "1149.18",
+    "evening_value": "73098.63",
+    "evening_2d": "88"
+  }
+]
+[
+  {
+    "date": "2025-06-04",
+    "day": "Wednesday",
+    "morning_set": "1135.60",
+    "morning_value": "26656.49",
+    "morning_2d": "06",
+    "evening_set": "1132.02",
+    "evening_value": "49605.35",
+    "evening_2d": "25"
+  },
+  {
+    "date": "2025-06-05",
+    "day": "Thursday",
+    "morning_set": "1139.28",
+    "morning_value": "18125.75",
+    "morning_2d": "85",
+    "evening_set": "1140.63",
+    "evening_value": "33207.27",
+    "evening_2d": "37"
+  },
+  {
+    "date": "2025-06-06",
+    "day": "Friday",
+    "morning_set": "1132.44",
+    "morning_value": "18430.55",
+    "morning_2d": "40",
+    "evening_set": "1136.43",
+    "evening_value": "30853.01",
+    "evening_2d": "33"
+  },
+  {
+    "date": "2025-06-09",
+    "day": "Monday",
+    "morning_set": "1136.76",
+    "morning_value": "14327.59",
+    "morning_2d": "67",
+    "evening_set": "1135.24",
+    "evening_value": "24061.72",
+    "evening_2d": "41"
+  },
+  {
+    "date": "2025-06-10",
+    "day": "Tuesday",
+    "morning_set": "1139.25",
+    "morning_value": "15625.49",
+    "morning_2d": "55",
+    "evening_set": "1139.16",
+    "evening_value": "29300.62",
+    "evening_2d": "60"
+  },
+  {
+    "date": "2025-06-11",
+    "day": "Wednesday",
+    "morning_set": "1141.98",
+    "morning_value": "13463.94",
+    "morning_2d": "83",
+    "evening_set": "1141.58",
+    "evening_value": "26216.13",
+    "evening_2d": "86"
+  },
+  {
+    "date": "2025-06-12",
+    "day": "Thursday",
+    "morning_set": "1134.93",
+    "morning_value": "17250.42",
+    "morning_2d": "30",
+    "evening_set": "1128.62",
+    "evening_value": "32483.12",
+    "evening_2d": "23"
+  },
+  {
+    "date": "2025-06-13",
+    "day": "Friday",
+    "morning_set": "1125.06",
+    "morning_value": "22095.09",
+    "morning_2d": "65",
+    "evening_set": "1122.70",
+    "evening_value": "42301.91",
+    "evening_2d": "01"
+  },
+  {
+    "date": "2025-06-16",
+    "day": "Monday",
+    "morning_set": "1112.70",
+    "morning_value": "21177.03",
+    "morning_2d": "07",
+    "evening_set": "1114.49",
+    "evening_value": "41122.78",
+    "evening_2d": "92"
+  },
+  {
+    "date": "2025-06-17",
+    "day": "Tuesday",
+    "morning_set": "1116.20",
+    "morning_value": "15763.04",
+    "morning_2d": "03",
+    "evening_set": "1113.58",
+    "evening_value": "27531.25",
+    "evening_2d": "81"
+  },
+  {
+    "date": "2025-06-18",
+    "day": "Wednesday",
+    "morning_set": "1114.33",
+    "morning_value": "15297.20",
+    "morning_2d": "37",
+    "evening_set": "1094.58",
+    "evening_value": "36048.37",
+    "evening_2d": "88"
+  },
+  {
+    "date": "2025-06-19",
+    "day": "Thursday",
+    "morning_set": "1076.00",
+    "morning_value": "25818.53",
+    "morning_2d": "08",
+    "evening_set": "1068.73",
+    "evening_value": "46634.59",
+    "evening_2d": "34"
+  },
+  {
+    "date": "2025-06-20",
+    "day": "Friday",
+    "morning_set": "1072.02",
+    "morning_value": "15391.58",
+    "morning_2d": "21",
+    "evening_set": "1067.63",
+    "evening_value": "49577.05",
+    "evening_2d": "37"
+  },
+  {
+    "date": "2025-06-23",
+    "day": "Monday",
+    "morning_set": "1063.49",
+    "morning_value": "19028.27",
+    "morning_2d": "98",
+    "evening_set": "1062.78",
+    "evening_value": "32506.99",
+    "evening_2d": "86"
+  },
+  {
+    "date": "2025-06-24",
+    "day": "Tuesday",
+    "morning_set": "1086.32",
+    "morning_value": "29794.02",
+    "morning_2d": "24",
+    "evening_set": "1100.01",
+    "evening_value": "52840.03",
+    "evening_2d": "10"
+  },
+  {
+    "date": "2025-06-25",
+    "day": "Wednesday",
+    "morning_set": "1097.20",
+    "morning_value": "33673.98",
+    "morning_2d": "03",
+    "evening_set": "1107.69",
+    "evening_value": "62662.66",
+    "evening_2d": "92"
+  },
+  {
+    "date": "2025-06-26",
+    "day": "Thursday",
+    "morning_set": "1115.47",
+    "morning_value": "24134.83",
+    "morning_2d": "74",
+    "evening_set": "1106.73",
+    "evening_value": "42119.63",
+    "evening_2d": "39"
+  },
+  {
+    "date": "2025-06-27",
+    "day": "Friday",
+    "morning_set": "1087.20",
+    "morning_value": "17372.95",
+    "morning_2d": "02",
+    "evening_set": "1082.42",
+    "evening_value": "38598.23",
+    "evening_2d": "28"
+  },
+  {
+    "date": "2025-06-30",
+    "day": "Monday",
+    "morning_set": "1085.61",
+    "morning_value": "24702.88",
+    "morning_2d": "12",
+    "evening_set": "1089.56",
+    "evening_value": "47225.04",
+    "evening_2d": "65"
+  }
+]
+[
+  {
+    "date": "2025-07-01",
+    "day": "Tuesday",
+    "morning_set": "1092.13",
+    "morning_value": "15277.25",
+    "morning_2d": "37",
+    "evening_set": "1110.01",
+    "evening_value": "41714.05",
+    "evening_2d": "14"
+  },
+  {
+    "date": "2025-07-02",
+    "day": "Wednesday",
+    "morning_set": "1105.42",
+    "morning_value": "18325.98",
+    "morning_2d": "25",
+    "evening_set": "1115.69",
+    "evening_value": "34958.34",
+    "evening_2d": "98"
+  },
+  {
+    "date": "2025-07-03",
+    "day": "Thursday",
+    "morning_set": "1119.36",
+    "morning_value": "18292.77",
+    "morning_2d": "62",
+    "evening_set": "1127.21",
+    "evening_value": "34920.97",
+    "evening_2d": "10"
+  },
+  {
+    "date": "2025-07-04",
+    "day": "Friday",
+    "morning_set": "1123.98",
+    "morning_value": "14112.07",
+    "morning_2d": "82",
+    "evening_set": "1119.94",
+    "evening_value": "27794.63",
+    "evening_2d": "44"
+  },
+  {
+    "date": "2025-07-07",
+    "day": "Monday",
+    "morning_set": "1111.46",
+    "morning_value": "16047.75",
+    "morning_2d": "67",
+    "evening_set": "1123.00",
+    "evening_value": "31447.59",
+    "evening_2d": "07"
+  },
+  {
+    "date": "2025-07-08",
+    "day": "Tuesday",
+    "morning_set": "1118.47",
+    "morning_value": "15251.38",
+    "morning_2d": "71",
+    "evening_set": "1115.65",
+    "evening_value": "29535.64",
+    "evening_2d": "55"
+  },
+  {
+    "date": "2025-07-09",
+    "day": "Wednesday",
+    "morning_set": "1111.60",
+    "morning_value": "16062.15",
+    "morning_2d": "02",
+    "evening_set": "1110.40",
+    "evening_value": "27165.01",
+    "evening_2d": "05"
+  },
+  {
+    "date": "2025-07-11",
+    "day": "Friday",
+    "morning_set": "1127.71",
+    "morning_value": "18447.32",
+    "morning_2d": "17",
+    "evening_set": "1121.13",
+    "evening_value": "32367.57",
+    "evening_2d": "37"
+  },
+  {
+    "date": "2025-07-14",
+    "day": "Monday",
+    "morning_set": "1131.91",
+    "morning_value": "15835.45",
+    "morning_2d": "15",
+    "evening_set": "1143.31",
+    "evening_value": "33684.38",
+    "evening_2d": "14"
+  },
+  {
+    "date": "2025-07-15",
+    "day": "Tuesday",
+    "morning_set": "1149.22",
+    "morning_value": "24895.92",
+    "morning_2d": "25",
+    "evening_set": "1161.01",
+    "evening_value": "48024.99",
+    "evening_2d": "14"
+  },
+  {
+    "date": "2025-07-16",
+    "day": "Wednesday",
+    "morning_set": "1161.25",
+    "morning_value": "24420.57",
+    "morning_2d": "50",
+    "evening_set": "1157.63",
+    "evening_value": "42928.06",
+    "evening_2d": "38"
+  },
+  {
+    "date": "2025-07-17",
+    "day": "Thursday",
+    "morning_set": "1191.01",
+    "morning_value": "37047.32",
+    "morning_2d": "17",
+    "evening_set": "1198.11",
+    "evening_value": "63374.58",
+    "evening_2d": "14"
+  },
+  {
+    "date": "2025-07-18",
+    "day": "Friday",
+    "morning_set": "1205.17",
+    "morning_value": "33401.83",
+    "morning_2d": "71",
+    "evening_set": "1206.58",
+    "evening_value": "53775.57",
+    "evening_2d": "85"
+  },
+  {
+    "date": "2025-07-21",
+    "day": "Monday",
+    "morning_set": "1205.27",
+    "morning_value": "23339.30",
+    "morning_2d": "79",
+    "evening_set": "1208.13",
+    "evening_value": "43213.00",
+    "evening_2d": "33"
+  },
+  {
+    "date": "2025-07-22",
+    "day": "Tuesday",
+    "morning_set": "1206.57",
+    "morning_value": "24358.79",
+    "morning_2d": "78",
+    "evening_set": "1191.75",
+    "evening_value": "49095.62",
+    "evening_2d": "55"
+  },
+  {
+    "date": "2025-07-23",
+    "day": "Wednesday",
+    "morning_set": "1218.63",
+    "morning_value": "27687.09",
+    "morning_2d": "37",
+    "evening_set": "1219.62",
+    "evening_value": "45127.72",
+    "evening_2d": "27"
+  },
+  {
+    "date": "2025-07-24",
+    "day": "Thursday",
+    "morning_set": "1216.15",
+    "morning_value": "24260.43",
+    "morning_2d": "50",
+    "evening_set": "1212.49",
+    "evening_value": "46877.92",
+    "evening_2d": "97"
+  },
+  {
+    "date": "2025-07-25",
+    "day": "Friday",
+    "morning_set": "1210.75",
+    "morning_value": "20520.73",
+    "morning_2d": "50",
+    "evening_set": "1217.15",
+    "evening_value": "36910.98",
+    "evening_2d": "50"
+  },
+  {
+    "date": "2025-07-29",
+    "day": "Tuesday",
+    "morning_set": "1218.06",
+    "morning_value": "24034.33",
+    "morning_2d": "64",
+    "evening_set": "1233.68",
+    "evening_value": "51323.28",
+    "evening_2d": "83"
+  },
+  {
+    "date": "2025-07-30",
+    "day": "Wednesday",
+    "morning_set": "1238.69",
+    "morning_value": "28415.04",
+    "morning_2d": "95",
+    "evening_set": "1244.14",
+    "evening_value": "54670.81",
+    "evening_2d": "40"
+  },
+  {
+    "date": "2025-07-31",
+    "day": "Thursday",
+    "morning_set": "1242.99",
+    "morning_value": "30192.68",
+    "morning_2d": "92",
+    "evening_set": "1242.35",
+    "evening_value": "54200.06",
+    "evening_2d": "50"
+  }
+]
+[
+  {
+    "date": "2025-08-01",
+    "day": "Friday",
+    "morning_set": "1237.15",
+    "morning_value": "25632.89",
+    "morning_2d": "52",
+    "evening_set": "1218.33",
+    "evening_value": "54586.68",
+    "evening_2d": "36"
+  },
+  {
+    "date": "2025-08-04",
+    "day": "Monday",
+    "morning_set": "1222.67",
+    "morning_value": "25386.69",
+    "morning_2d": "76",
+    "evening_set": "1229.40",
+    "evening_value": "44358.92",
+    "evening_2d": "08"
+  },
+  {
+    "date": "2025-08-05",
+    "day": "Tuesday",
+    "morning_set": "1244.19",
+    "morning_value": "28261.28",
+    "morning_2d": "91",
+    "evening_set": "1246.96",
+    "evening_value": "53040.81",
+    "evening_2d": "60"
+  },
+  {
+    "date": "2025-08-06",
+    "day": "Wednesday",
+    "morning_set": "1263.78",
+    "morning_value": "39146.94",
+    "morning_2d": "86",
+    "evening_set": "1264.47",
+    "evening_value": "65232.67",
+    "evening_2d": "72"
+  },
+  {
+    "date": "2025-08-07",
+    "day": "Thursday",
+    "morning_set": "1274.76",
+    "morning_value": "34243.73",
+    "morning_2d": "63",
+    "evening_set": "1265.15",
+    "evening_value": "60459.25",
+    "evening_2d": "59"
+  },
+  {
+    "date": "2025-08-08",
+    "day": "Friday",
+    "morning_set": "1259.40",
+    "morning_value": "30215.28",
+    "morning_2d": "05",
+    "evening_set": "1259.07",
+    "evening_value": "51232.32",
+    "evening_2d": "72"
+  },
+  {
+    "date": "2025-08-13",
+    "day": "Wednesday",
+    "morning_set": "1271.81",
+    "morning_value": "38451.60",
+    "morning_2d": "11",
+    "evening_set": "1277.43",
+    "evening_value": "70067.54",
+    "evening_2d": "37"
+  },
+  {
+    "date": "2025-08-14",
+    "day": "Thursday",
+    "morning_set": "1269.78",
+    "morning_value": "34184.36",
+    "morning_2d": "84",
+    "evening_set": "1266.67",
+    "evening_value": "56938.83",
+    "evening_2d": "78"
+  },
+  {
+    "date": "2025-08-15",
+    "day": "Friday",
+    "morning_set": "1258.62",
+    "morning_value": "27445.10",
+    "morning_2d": "25",
+    "evening_set": "1259.42",
+    "evening_value": "48320.80",
+    "evening_2d": "20"
+  },
+  {
+    "date": "2025-08-18",
+    "day": "Monday",
+    "morning_set": "1254.70",
+    "morning_value": "20145.75",
+    "morning_2d": "05",
+    "evening_set": "1242.31",
+    "evening_value": "39299.17",
+    "evening_2d": "19"
+  },
+  {
+    "date": "2025-08-19",
+    "day": "Tuesday",
+    "morning_set": "1246.45",
+    "morning_value": "22327.22",
+    "morning_2d": "57",
+    "evening_set": "1235.76",
+    "evening_value": "39590.96",
+    "evening_2d": "60"
+  },
+  {
+    "date": "2025-08-20",
+    "day": "Wednesday",
+    "morning_set": "1235.32",
+    "morning_value": "18697.65",
+    "morning_2d": "27",
+    "evening_set": "1248.13",
+    "evening_value": "43127.12",
+    "evening_2d": "37"
+  },
+  {
+    "date": "2025-08-21",
+    "day": "Thursday",
+    "morning_set": "1246.00",
+    "morning_value": "24784.05",
+    "morning_2d": "04",
+    "evening_set": "1244.79",
+    "evening_value": "49180.56",
+    "evening_2d": "90"
+  },
+  {
+    "date": "2025-08-22",
+    "day": "Friday",
+    "morning_set": "1254.77",
+    "morning_value": "21274.61",
+    "morning_2d": "74",
+    "evening_set": "1253.39",
+    "evening_value": "37999.28",
+    "evening_2d": "99"
+  },
+  {
+    "date": "2025-08-25",
+    "day": "Monday",
+    "morning_set": "1265.11",
+    "morning_value": "21906.56",
+    "morning_2d": "16",
+    "evening_set": "1262.67",
+    "evening_value": "39908.97",
+    "evening_2d": "78"
+  },
+  {
+    "date": "2025-08-26",
+    "day": "Tuesday",
+    "morning_set": "1259.70",
+    "morning_value": "24414.11",
+    "morning_2d": "04",
+    "evening_set": "1251.26",
+    "evening_value": "59158.26",
+    "evening_2d": "68"
+  },
+  {
+    "date": "2025-08-27",
+    "day": "Wednesday",
+    "morning_set": "1256.48",
+    "morning_value": "29381.04",
+    "morning_2d": "81",
+    "evening_set": "1248.03",
+    "evening_value": "46883.53",
+    "evening_2d": "33"
+  },
+  {
+    "date": "2025-08-28",
+    "day": "Thursday",
+    "morning_set": "1248.17",
+    "morning_value": "15611.37",
+    "morning_2d": "71",
+    "evening_set": "1250.09",
+    "evening_value": "35798.91",
+    "evening_2d": "98"
+  },
+  {
+    "date": "2025-08-29",
+    "day": "Friday",
+    "morning_set": "1245.17",
+    "morning_value": "18857.72",
+    "morning_2d": "77",
+    "evening_set": "1236.61",
+    "evening_value": "52475.14",
+    "evening_2d": "15"
+  }
+]
+[
+  {
+    "date": "2025-09-01",
+    "day": "Monday",
+    "morning_set": "1239.77",
+    "morning_value": "17938.55",
+    "morning_2d": "78",
+    "evening_set": "1244.48",
+    "evening_value": "35696.48",
+    "evening_2d": "86"
+  },
+  {
+    "date": "2025-09-02",
+    "day": "Tuesday",
+    "morning_set": "1248.84",
+    "morning_value": "20727.21",
+    "morning_2d": "47",
+    "evening_set": "1248.78",
+    "evening_value": "34424.58",
+    "evening_2d": "84"
+  },
+  {
+    "date": "2025-09-03",
+    "day": "Wednesday",
+    "morning_set": "1259.46",
+    "morning_value": "26987.08",
+    "morning_2d": "67",
+    "evening_set": "1259.31",
+    "evening_value": "44707.38",
+    "evening_2d": "17"
+  },
+  {
+    "date": "2025-09-04",
+    "day": "Thursday",
+    "morning_set": "1263.42",
+    "morning_value": "24622.25",
+    "morning_2d": "22",
+    "evening_set": "1252.55",
+    "evening_value": "44813.45",
+    "evening_2d": "53"
+  },
+  {
+    "date": "2025-09-05",
+    "day": "Friday",
+    "morning_set": "1261.82",
+    "morning_value": "27216.79",
+    "morning_2d": "26",
+    "evening_set": "1264.80",
+    "evening_value": "51657.81",
+    "evening_2d": "07"
+  },
+  {
+    "date": "2025-09-08",
+    "day": "Monday",
+    "morning_set": "1265.15",
+    "morning_value": "30952.28",
+    "morning_2d": "52",
+    "evening_set": "1266.11",
+    "evening_value": "54546.06",
+    "evening_2d": "16"
+  },
+  {
+    "date": "2025-09-09",
+    "day": "Tuesday",
+    "morning_set": "1270.81",
+    "morning_value": "23596.69",
+    "morning_2d": "16",
+    "evening_set": "1276.08",
+    "evening_value": "47384.85",
+    "evening_2d": "84"
+  },
+  {
+    "date": "2025-09-10",
+    "day": "Wednesday",
+    "morning_set": "1277.68",
+    "morning_value": "23257.84",
+    "morning_2d": "87",
+    "evening_set": "1278.05",
+    "evening_value": "42Visual.94",
+    "evening_2d": "52"
+  },
+  {
+    "date": "2025-09-11",
+    "day": "Thursday",
+    "morning_set": "1286.41",
+    "morning_value": "25765.36",
+    "morning_2d": "15",
+    "evening_set": "1288.03",
+    "evening_value": "46753.07",
+    "evening_2d": "33"
+  },
+  {
+    "date": "2025-09-12",
+    "day": "Friday",
+    "morning_set": "1292.13",
+    "morning_value": "21889.83",
+    "morning_2d": "39",
+    "evening_set": "1293.62",
+    "evening_value": "38576.94",
+    "evening_2d": "26"
+  },
+  {
+    "date": "2025-09-15",
+    "day": "Monday",
+    "morning_set": "1297.60",
+    "morning_value": "20032.21",
+    "morning_2d": "02",
+    "evening_set": "1299.78",
+    "evening_value": "35280.04",
+    "evening_2d": "80"
+  },
+  {
+    "date": "2025-09-16",
+    "day": "Tuesday",
+    "morning_set": "1306.38",
+    "morning_value": "25795.15",
+    "morning_2d": "85",
+    "evening_set": "1308.19",
+    "evening_value": "47455.08",
+    "evening_2d": "95"
+  },
+  {
+    "date": "2025-09-17",
+    "day": "Wednesday",
+    "morning_set": "1310.16",
+    "morning_value": "26515.14",
+    "morning_2d": "65",
+    "evening_set": "1306.69",
+    "evening_value": "48098.33",
+    "evening_2d": "98"
+  },
+  {
+    "date": "2025-09-18",
+    "day": "Thursday",
+    "morning_set": "1299.96",
+    "morning_value": "26555.73",
+    "morning_2d": "65",
+    "evening_set": "1297.01",
+    "evening_value": "44929.51",
+    "evening_2d": "19"
+  },
+  {
+    "date": "2025-09-19",
+    "day": "Friday",
+    "morning_set": "1295.38",
+    "morning_value": "18408.01",
+    "morning_2d": "88",
+    "evening_set": "1292.72",
+    "evening_value": "47981.93",
+    "evening_2d": "21"
+  },
+  {
+    "date": "2025-09-22",
+    "day": "Monday",
+    "morning_set": "1287.67",
+    "morning_value": "16707.97",
+    "morning_2d": "77",
+    "evening_set": "1282.54",
+    "evening_value": "31595.35",
+    "evening_2d": "45"
+  },
+  {
+    "date": "2025-09-23",
+    "day": "Tuesday",
+    "morning_set": "1281.04",
+    "morning_value": "19023.32",
+    "morning_2d": "43",
+    "evening_set": "1273.20",
+    "evening_value": "40147.95",
+    "evening_2d": "07"
+  },
+  {
+    "date": "2025-09-24",
+    "day": "Wednesday",
+    "morning_set": "1277.32",
+    "morning_value": "22905.69",
+    "morning_2d": "25",
+    "evening_set": "1278.41",
+    "evening_value": "38563.93",
+    "evening_2d": "13"
+  },
+  {
+    "date": "2025-09-25",
+    "day": "Thursday",
+    "morning_set": "1286.43",
+    "morning_value": "18751.10",
+    "morning_2d": "31",
+    "evening_set": "1288.26",
+    "evening_value": "35348.54",
+    "evening_2d": "68"
+  },
+  {
+    "date": "2025-09-26",
+    "day": "Friday",
+    "morning_set": "1285.66",
+    "morning_value": "17100.94",
+    "morning_2d": "60",
+    "evening_set": "1278.74",
+    "evening_value": "36245.78",
+    "evening_2d": "45"
+  },
+  {
+    "date": "2025-09-29",
+    "day": "Monday",
+    "morning_set": "1282.84",
+    "morning_value": "17354.32",
+    "morning_2d": "44",
+    "evening_set": "1288.07",
+    "evening_value": "37860.62",
+    "evening_2d": "70"
+  },
+  {
+    "date": "2025-09-30",
+    "day": "Tuesday",
+    "morning_set": "1280.38",
+    "morning_value": "21646.38",
+    "morning_2d": "86",
+    "evening_set": "1274.17",
+    "evening_value": "49548.34",
+    "evening_2d": "78"
+  }
+]
+[
+  {
+    "date": "2025-10-01",
+    "day": "Wednesday",
+    "morning_set": "1279.10",
+    "morning_value": "20794.71",
+    "morning_2d": "04",
+    "evening_set": "1275.03",
+    "evening_value": "35487.18",
+    "evening_2d": "37"
+  },
+  {
+    "date": "2025-10-02",
+    "day": "Thursday",
+    "morning_set": "1290.66",
+    "morning_value": "20422.53",
+    "morning_2d": "62",
+    "evening_set": "1288.29",
+    "evening_value": "35286.71",
+    "evening_2d": "96"
+  },
+  {
+    "date": "2025-10-03",
+    "day": "Friday",
+    "morning_set": "1292.45",
+    "morning_value": "18365.65",
+    "morning_2d": "55",
+    "evening_set": "1293.61",
+    "evening_value": "35659.08",
+    "evening_2d": "19"
+  },
+  {
+    "date": "2025-10-06",
+    "day": "Monday",
+    "morning_set": "1291.72",
+    "morning_value": "18889.13",
+    "morning_2d": "29",
+    "evening_set": "1285.64",
+    "evening_value": "33100.46",
+    "evening_2d": "40"
+  },
+  {
+    "date": "2025-10-07",
+    "day": "Tuesday",
+    "morning_set": "1301.20",
+    "morning_value": "20315.99",
+    "morning_2d": "05",
+    "evening_set": "1305.24",
+    "evening_value": "34987.28",
+    "evening_2d": "47"
+  },
+  {
+    "date": "2025-10-08",
+    "day": "Wednesday",
+    "morning_set": "1306.65",
+    "morning_value": "17908.65",
+    "morning_2d": "58",
+    "evening_set": "1304.92",
+    "evening_value": "37346.56",
+    "evening_2d": "26"
+  },
+  {
+    "date": "2025-10-09",
+    "day": "Thursday",
+    "morning_set": "1312.24",
+    "morning_value": "22205.55",
+    "morning_2d": "45",
+    "evening_set": "1313.99",
+    "evening_value": "43145.38",
+    "evening_2d": "95"
+  },
+  {
+    "date": "2025-10-10",
+    "day": "Friday",
+    "morning_set": "1288.03",
+    "morning_value": "20455.89",
+    "morning_2d": "35",
+    "evening_set": "1286.98",
+    "evening_value": "37692.20",
+    "evening_2d": "82"
+  },
+  {
+    "date": "2025-10-14",
+    "day": "Tuesday",
+    "morning_set": "1276.52",
+    "morning_value": "23043.89",
+    "morning_2d": "23",
+    "evening_set": "1266.38",
+    "evening_value": "42503.92",
+    "evening_2d": "83"
+  },
+  {
+    "date": "2025-10-15",
+    "day": "Wednesday",
+    "morning_set": "1279.59",
+    "morning_value": "19664.28",
+    "morning_2d": "94",
+    "evening_set": "1286.69",
+    "evening_value": "46484.63",
+    "evening_2d": "94"
+  },
+  {
+    "date": "2025-10-16",
+    "day": "Thursday",
+    "morning_set": "1290.77",
+    "morning_value": "20645.38",
+    "morning_2d": "75",
+    "evening_set": "1291.46",
+    "evening_value": "33202.91",
+    "evening_2d": "62"
+  },
+  {
+    "date": "2025-10-17",
+    "day": "Friday",
+    "morning_set": "1284.21",
+    "morning_value": "18520.04",
+    "morning_2d": "10",
+    "evening_set": "1274.61",
+    "evening_value": "36760.70",
+    "evening_2d": "10"
+  },
+  {
+    "date": "2025-10-20",
+    "day": "Monday",
+    "morning_set": "1287.07",
+    "morning_value": "14205.37",
+    "morning_2d": "75",
+    "evening_set": "1284.47",
+    "evening_value": "26555.65",
+    "evening_2d": "75"
+  },
+  {
+    "date": "2025-10-21",
+    "day": "Tuesday",
+    "morning_set": "1288.59",
+    "morning_value": "18219.39",
+    "morning_2d": "99",
+    "evening_set": "1290.72",
+    "evening_value": "34370.82",
+    "evening_2d": "20"
+  },
+  {
+    "date": "2025-10-22",
+    "day": "Wednesday",
+    "morning_set": "1298.07",
+    "morning_value": "25044.04",
+    "morning_2d": "74",
+    "evening_set": "1302.35",
+    "evening_value": "51176.38",
+    "evening_2d": "56"
+  },
+  {
+    "date": "2025-10-24",
+    "day": "Friday",
+    "morning_set": "1316.97",
+    "morning_value": "25471.86",
+    "morning_2d": "71",
+    "evening_set": "1313.91",
+    "evening_value": "44292.96",
+    "evening_2d": "12"
+  },
+  {
+    "date": "2025-10-27",
+    "day": "Monday",
+    "morning_set": "1330.19",
+    "morning_value": "30956.94",
+    "morning_2d": "96",
+    "evening_set": "1323.52",
+    "evening_value": "53328.39",
+    "evening_2d": "28"
+  },
+  {
+    "date": "2025-10-28",
+    "day": "Tuesday",
+    "morning_set": "1315.52",
+    "morning_value": "24141.36",
+    "morning_2d": "21",
+    "evening_set": "1314.28",
+    "evening_value": "44039.59",
+    "evening_2d": "89"
+  },
+  {
+    "date": "2025-10-29",
+    "day": "Wednesday",
+    "morning_set": "1314.31",
+    "morning_value": "18911.58",
+    "morning_2d": "11",
+    "evening_set": "1315.64",
+    "evening_value": "33460.18",
+    "evening_2d": "40"
+  },
+  {
+    "date": "2025-10-30",
+    "day": "Thursday",
+    "morning_set": "1309.77",
+    "morning_value": "21986.61",
+    "morning_2d": "76",
+    "evening_set": "1314.65",
+    "evening_value": "45473.27",
+    "evening_2d": "53"
+  },
+  {
+    "date": "2025-10-31",
+    "day": "Friday",
+    "morning_set": "1314.82",
+    "morning_value": "16652.27",
+    "morning_2d": "22",
+    "evening_set": "1309.50",
+    "evening_value": "32552.48",
+    "evening_2d": "02"
+  }
+]
+[
+  {
+    "date": "2025-11-03",
+    "day": "Monday",
+    "morning_set": "1313.06",
+    "morning_value": "15716.28",
+    "morning_2d": "66",
+    "evening_set": "1308.86",
+    "evening_value": "29741.46",
+    "evening_2d": "61"
+  },
+  {
+    "date": "2025-11-04",
+    "day": "Tuesday",
+    "morning_set": "1300.32",
+    "morning_value": "19369.31",
+    "morning_2d": "29",
+    "evening_set": "1298.60",
+    "evening_value": "40719.65",
+    "evening_2d": "09"
+  },
+  {
+    "date": "2025-11-05",
+    "day": "Wednesday",
+    "morning_set": "1295.93",
+    "morning_value": "26598.76",
+    "morning_2d": "38",
+    "evening_set": "1295.29",
+    "evening_value": "43468.21",
+    "evening_2d": "98"
+  },
+  {
+    "date": "2025-11-06",
+    "day": "Thursday",
+    "morning_set": "1305.07",
+    "morning_value": "20391.12",
+    "morning_2d": "71",
+    "evening_set": "1313.31",
+    "evening_value": "38139.64",
+    "evening_2d": "19"
+  },
+  {
+    "date": "2025-11-07",
+    "day": "Friday",
+    "morning_set": "1311.95",
+    "morning_value": "15564.10",
+    "morning_2d": "54",
+    "evening_set": "1302.91",
+    "evening_value": "29054.05",
+    "evening_2d": "14"
+  },
+  {
+    "date": "2025-11-10",
+    "day": "Monday",
+    "morning_set": "1306.03",
+    "morning_value": "15557.55",
+    "morning_2d": "37",
+    "evening_set": "1306.26",
+    "evening_value": "29428.77",
+    "evening_2d": "68"
+  },
+  {
+    "date": "2025-11-11",
+    "day": "Tuesday",
+    "morning_set": "1304.48",
+    "morning_value": "15535.49",
+    "morning_2d": "85",
+    "evening_set": "1300.47",
+    "evening_value": "32340.64",
+    "evening_2d": "70"
+  },
+  {
+    "date": "2025-11-12",
+    "day": "Wednesday",
+    "morning_set": "1292.66",
+    "morning_value": "19729.60",
+    "morning_2d": "69",
+    "evening_set": "1284.81",
+    "evening_value": "38898.51",
+    "evening_2d": "18"
+  },
+  {
+    "date": "2025-11-13",
+    "day": "Thursday",
+    "morning_set": "1287.95",
+    "morning_value": "19781.54",
+    "morning_2d": "51",
+    "evening_set": "1287.44",
+    "evening_value": "34627.43",
+    "evening_2d": "47"
+  },
+  {
+    "date": "2025-11-14",
+    "day": "Friday",
+    "morning_set": "1267.37",
+    "morning_value": "16362.53",
+    "morning_2d": "72",
+    "evening_set": "1269.26",
+    "evening_value": "32021.39",
+    "evening_2d": "61"
+  },
+  {
+    "date": "2025-11-17",
+    "day": "Monday",
+    "morning_set": "1272.90",
+    "morning_value": "16908.86",
+    "morning_2d": "08",
+    "evening_set": "1280.07",
+    "evening_value": "33899.70",
+    "evening_2d": "79"
+  },
+  {
+    "date": "2025-11-18",
+    "day": "Tuesday",
+    "morning_set": "1269.93",
+    "morning_value": "16146.82",
+    "morning_2d": "36",
+    "evening_set": "1270.04",
+    "evening_value": "29343.32",
+    "evening_2d": "43"
+  },
+  {
+    "date": "2025-11-19",
+    "day": "Wednesday",
+    "morning_set": "1265.84",
+    "morning_value": "17095.48",
+    "morning_2d": "45",
+    "evening_set": "1272.17",
+    "evening_value": "30423.09",
+    "evening_2d": "73"
+  },
+  {
+    "date": "2025-11-20",
+    "day": "Thursday",
+    "morning_set": "1291.42",
+    "morning_value": "19745.99",
+    "morning_2d": "25",
+    "evening_set": "1281.81",
+    "evening_value": "33440.55",
+    "evening_2d": "10"
+  },
+  {
+    "date": "2025-11-21",
+    "day": "Friday",
+    "morning_set": "1263.24",
+    "morning_value": "18551.85",
+    "morning_2d": "41",
+    "evening_set": "1254.40",
+    "evening_value": "36090.12",
+    "evening_2d": "00"
+  },
+  {
+    "date": "2025-11-24",
+    "day": "Monday",
+    "morning_set": "1257.94",
+    "morning_value": "15368.09",
+    "morning_2d": "48",
+    "evening_set": "1252.73",
+    "evening_value": "41791.28",
+    "evening_2d": "31"
+  },
+  {
+    "date": "2025-11-25",
+    "day": "Tuesday",
+    "morning_set": "1267.22",
+    "morning_value": "19595.19",
+    "morning_2d": "25",
+    "evening_set": "1268.78",
+    "evening_value": "34501.15",
+    "evening_2d": "81"
+  },
+  {
+    "date": "2025-11-26",
+    "day": "Wednesday",
+    "morning_set": "1266.82",
+    "morning_value": "18459.37",
+    "morning_2d": "29",
+    "evening_set": "1261.18",
+    "evening_value": "34979.31",
+    "evening_2d": "89"
+  },
+  {
+    "date": "2025-11-27",
+    "day": "Thursday",
+    "morning_set": "1261.23",
+    "morning_value": "13522.16",
+    "morning_2d": "32",
+    "evening_set": "1252.71",
+    "evening_value": "23180.98",
+    "evening_2d": "10"
+  },
+  {
+    "date": "2025-11-28",
+    "day": "Friday",
+    "morning_set": "1254.79",
+    "morning_value": "15703.23",
+    "morning_2d": "93",
+    "evening_set": "1256.69",
+    "evening_value": "30846.31",
+    "evening_2d": "96"
+  }
+]
+[
+  {
+    "date": "2025-12-01",
+    "day": "Monday",
+    "morning_set": "1268.69",
+    "morning_value": "20810.35",
+    "morning_2d": "90",
+    "evening_set": "1276.57",
+    "evening_value": "36422.92",
+    "evening_2d": "72"
+  },
+  {
+    "date": "2025-12-02",
+    "day": "Tuesday",
+    "morning_set": "1271.80",
+    "morning_value": "16879.62",
+    "morning_2d": "09",
+    "evening_set": "1277.58",
+    "evening_value": "32540.19",
+    "evening_2d": "80"
+  },
+  {
+    "date": "2025-12-03",
+    "day": "Wednesday",
+    "morning_set": "1275.34",
+    "morning_value": "21322.82",
+    "morning_2d": "42",
+    "evening_set": "1274.82",
+    "evening_value": "36323.96",
+    "evening_2d": "23"
+  },
+  {
+    "date": "2025-12-04",
+    "day": "Thursday",
+    "morning_set": "1273.20",
+    "morning_value": "21156.86",
+    "morning_2d": "06",
+    "evening_set": "1273.77",
+    "evening_value": "38508.08",
+    "evening_2d": "78"
+  },
+  {
+    "date": "2025-12-08",
+    "day": "Monday",
+    "morning_set": "1269.38",
+    "morning_value": "20461.87",
+    "morning_2d": "81",
+    "evening_set": "1261.39",
+    "evening_value": "37422.31",
+    "evening_2d": "92"
+  },
+  {
+    "date": "2025-12-09",
+    "day": "Tuesday",
+    "morning_set": "1265.22",
+    "morning_value": "12175.56",
+    "morning_2d": "25",
+    "evening_set": "1269.87",
+    "evening_value": "25889.49",
+    "evening_2d": "79"
+  },
+  {
+    "date": "2025-12-11",
+    "day": "Thursday",
+    "morning_set": "1255.33",
+    "morning_value": "15410.77",
+    "morning_2d": "30",
+    "evening_set": "1253.54",
+    "evening_value": "28929.61",
+    "evening_2d": "49"
+  },
+  {
+    "date": "2025-12-12",
+    "day": "Friday",
+    "morning_set": "1253.83",
+    "morning_value": "22981.01",
+    "morning_2d": "31",
+    "evening_set": "1254.10",
+    "evening_value": "36693.42",
+    "evening_2d": "03"
+  },
+  {
+    "date": "2025-12-15",
+    "day": "Monday",
+    "morning_set": "1257.55",
+    "morning_value": "16282.54",
+    "morning_2d": "52",
+    "evening_set": "1273.40",
+    "evening_value": "33093.33",
+    "evening_2d": "03"
+  },
+  {
+    "date": "2025-12-16",
+    "day": "Tuesday",
+    "morning_set": "1261.03",
+    "morning_value": "16637.04",
+    "morning_2d": "37",
+    "evening_set": "1260.68",
+    "evening_value": "30835.38",
+    "evening_2d": "85"
+  },
+  {
+    "date": "2025-12-17",
+    "day": "Wednesday",
+    "morning_set": "1259.94",
+    "morning_value": "17695.97",
+    "morning_2d": "45",
+    "evening_set": "1256.85",
+    "evening_value": "32017.40",
+    "evening_2d": "57"
+  },
+  {
+    "date": "2025-12-18",
+    "day": "Thursday",
+    "morning_set": "1252.07",
+    "morning_value": "19815.44",
+    "morning_2d": "75",
+    "evening_set": "1250.07",
+    "evening_value": "40166.85",
+    "evening_2d": "76"
+  },
+  {
+    "date": "2025-12-19",
+    "day": "Friday",
+    "morning_set": "1253.65",
+    "morning_value": "15270.06",
+    "morning_2d": "50",
+    "evening_set": "1252.19",
+    "evening_value": "34064.09",
+    "evening_2d": "94"
+  },
+  {
+    "date": "2025-12-22",
+    "day": "Monday",
+    "morning_set": "1264.63",
+    "morning_value": "19196.64",
+    "morning_2d": "36",
+    "evening_set": "1269.68",
+    "evening_value": "31025.56",
+    "evening_2d": "85"
+  },
+  {
+    "date": "2025-12-23",
+    "day": "Tuesday",
+    "morning_set": "1272.34",
+    "morning_value": "17691.23",
+    "morning_2d": "41",
+    "evening_set": "1271.11",
+    "evening_value": "31407.37",
+    "evening_2d": "17"
+  },
+  {
+    "date": "2025-12-24",
+    "day": "Wednesday",
+    "morning_set": "1270.34",
+    "morning_value": "17822.83",
+    "morning_2d": "42",
+    "evening_set": "1275.33",
+    "evening_value": "28615.84",
+    "evening_2d": "35"
+  },
+  {
+    "date": "2025-12-25",
+    "day": "Thursday",
+    "morning_set": "1266.59",
+    "morning_value": "7585.40",
+    "morning_2d": "95",
+    "evening_set": "1264.77",
+    "evening_value": "15638.05",
+    "evening_2d": "78"
+  },
+  {
+    "date": "2025-12-26",
+    "day": "Friday",
+    "morning_set": "1259.49",
+    "morning_value": "7776.03",
+    "morning_2d": "96",
+    "evening_set": "1259.25",
+    "evening_value": "17261.83",
+    "evening_2d": "51"
+  },
+  {
+    "date": "2025-12-29",
+    "day": "Monday",
+    "morning_set": "1256.67",
+    "morning_value": "9926.43",
+    "morning_2d": "76",
+    "evening_set": "1254.03",
+    "evening_value": "23709.17",
+    "evening_2d": "39"
+  },
+  {
+    "date": "2025-12-30",
+    "day": "Tuesday",
+    "morning_set": "1257.40",
+    "morning_value": "13151.40",
+    "morning_2d": "01",
+    "evening_set": "1259.67",
+    "evening_value": "32547.93",
+    "evening_2d": "77"
+  }
+]
+[
+  {
+    "date": "2026-01-05",
+    "day": "Monday",
+    "morning_set": "1282.73",
+    "morning_value": "28208.92",
+    "morning_2d": "38",
+    "evening_set": "1280.05",
+    "evening_value": "45727.04",
+    "evening_2d": "57"
+  },
+  {
+    "date": "2026-01-06",
+    "day": "Tuesday",
+    "morning_set": "1277.21",
+    "morning_value": "21645.40",
+    "morning_2d": "15",
+    "evening_set": "1274.75",
+    "evening_value": "37483.09",
+    "evening_2d": "53"
+  },
+  {
+    "date": "2026-01-07",
+    "day": "Wednesday",
+    "morning_set": "1274.91",
+    "morning_value": "21335.80",
+    "morning_2d": "15",
+    "evening_set": "1280.82",
+    "evening_value": "38904.23",
+    "evening_2d": "24"
+  },
+  {
+    "date": "2026-01-08",
+    "day": "Thursday",
+    "morning_set": "1262.97",
+    "morning_value": "29510.75",
+    "morning_2d": "70",
+    "evening_set": "1253.60",
+    "evening_value": "48218.82",
+    "evening_2d": "08"
+  },
+  {
+    "date": "2026-01-09",
+    "day": "Friday",
+    "morning_set": "1260.64",
+    "morning_value": "16405.13",
+    "morning_2d": "45",
+    "evening_set": "1254.09",
+    "evening_value": "32668.65",
+    "evening_2d": "98"
+  },
+  {
+    "date": "2026-01-12",
+    "day": "Monday",
+    "morning_set": "1248.32",
+    "morning_value": "20904.31",
+    "morning_2d": "24",
+    "evening_set": "1242.20",
+    "evening_value": "34141.60",
+    "evening_2d": "01"
+  },
+  {
+    "date": "2026-01-13",
+    "day": "Tuesday",
+    "morning_set": "1236.57",
+    "morning_value": "20023.47",
+    "morning_2d": "73",
+    "evening_set": "1235.30",
+    "evening_value": "37421.21",
+    "evening_2d": "01"
+  },
+  {
+    "date": "2026-01-14",
+    "day": "Wednesday",
+    "morning_set": "1244.92",
+    "morning_value": "22678.53",
+    "morning_2d": "28",
+    "evening_set": "1244.30",
+    "evening_value": "39177.88",
+    "evening_2d": "07"
+  },
+  {
+    "date": "2026-01-15",
+    "day": "Thursday",
+    "morning_set": "1252.00",
+    "morning_value": "23154.71",
+    "morning_2d": "04",
+    "evening_set": "1261.39",
+    "evening_value": "44226.33",
+    "evening_2d": "96"
+  },
+  {
+    "date": "2026-01-16",
+    "day": "Friday",
+    "morning_set": "1264.77",
+    "morning_value": "22172.13",
+    "morning_2d": "72",
+    "evening_set": "1275.60",
+    "evening_value": "45773.52",
+    "evening_2d": "03"
+  },
+  {
+    "date": "2026-01-19",
+    "day": "Monday",
+    "morning_set": "1280.44",
+    "morning_value": "17355.28",
+    "morning_2d": "45",
+    "evening_set": "1283.20",
+    "evening_value": "36145.56",
+    "evening_2d": "05"
+  },
+  {
+    "date": "2026-01-20",
+    "day": "Tuesday",
+    "morning_set": "1301.83",
+    "morning_value": "28751.48",
+    "morning_2d": "31",
+    "evening_set": "1296.37",
+    "evening_value": "52626.54",
+    "evening_2d": "76"
+  },
+  {
+    "date": "2026-01-21",
+    "day": "Wednesday",
+    "morning_set": "1315.37",
+    "morning_value": "37381.33",
+    "morning_2d": "71",
+    "evening_set": "1317.56",
+    "evening_value": "68148.65",
+    "evening_2d": "68"
+  },
+  {
+    "date": "2026-01-22",
+    "day": "Thursday",
+    "morning_set": "1321.94",
+    "morning_value": "31452.09",
+    "morning_2d": "42",
+    "evening_set": "1311.64",
+    "evening_value": "72724.01",
+    "evening_2d": "44"
+  },
+  {
+    "date": "2026-01-23",
+    "day": "Friday",
+    "morning_set": "1319.64",
+    "morning_value": "28793.73",
+    "morning_2d": "43",
+    "evening_set": "1314.39",
+    "evening_value": "50901.86",
+    "evening_2d": "91"
+  },
+  {
+    "date": "2026-01-26",
+    "day": "Monday",
+    "morning_set": "1310.27",
+    "morning_value": "22250.93",
+    "morning_2d": "70",
+    "evening_set": "1307.07",
+    "evening_value": "42712.69",
+    "evening_2d": "72"
+  },
+  {
+    "date": "2026-01-27",
+    "day": "Tuesday",
+    "morning_set": "1330.45",
+    "morning_value": "31114.48",
+    "morning_2d": "54",
+    "evening_set": "1334.45",
+    "evening_value": "54241.97",
+    "evening_2d": "51"
+  },
+  {
+    "date": "2026-01-28",
+    "day": "Wednesday",
+    "morning_set": "1337.06",
+    "morning_value": "22520.47",
+    "morning_2d": "60",
+    "evening_set": "1338.90",
+    "evening_value": "44733.10",
+    "evening_2d": "03"
+  },
+  {
+    "date": "2026-01-29",
+    "day": "Thursday",
+    "morning_set": "1336.08",
+    "morning_value": "26767.23",
+    "morning_2d": "87",
+    "evening_set": "1331.07",
+    "evening_value": "51753.59",
+    "evening_2d": "73"
+  },
+  {
+    "date": "2026-01-30",
+    "day": "Friday",
+    "morning_set": "1326.05",
+    "morning_value": "22080.77",
+    "morning_2d": "50",
+    "evening_set": "1325.62",
+    "evening_value": "46898.74",
+    "evening_2d": "28"
+  }
+]
+[
+  {
+    "date": "2026-02-02",
+    "day": "Monday",
+    "morning_set": "1315.05",
+    "morning_value": "22159.61",
+    "morning_2d": "59",
+    "evening_set": "1321.42",
+    "evening_value": "43545.17",
+    "evening_2d": "25"
+  },
+  {
+    "date": "2026-02-03",
+    "day": "Tuesday",
+    "morning_set": "1345.49",
+    "morning_value": "32509.22",
+    "morning_2d": "99",
+    "evening_set": "1336.11",
+    "evening_value": "57100.78",
+    "evening_2d": "10"
+  },
+  {
+    "date": "2026-02-04",
+    "day": "Wednesday",
+    "morning_set": "1342.21",
+    "morning_value": "31826.76",
+    "morning_2d": "16",
+    "evening_set": "1346.54",
+    "evening_value": "53300.82",
+    "evening_2d": "40"
+  },
+  {
+    "date": "2026-02-05",
+    "day": "Thursday",
+    "morning_set": "1338.91",
+    "morning_value": "32345.64",
+    "morning_2d": "15",
+    "evening_set": "1346.23",
+    "evening_value": "57388.58",
+    "evening_2d": "38"
+  },
+  {
+    "date": "2026-02-06",
+    "day": "Friday",
+    "morning_set": "1356.44",
+    "morning_value": "25149.99",
+    "morning_2d": "49",
+    "evening_set": "1354.01",
+    "evening_value": "47476.09",
+    "evening_2d": "16"
+  },
+  {
+    "date": "2026-02-09",
+    "day": "Monday",
+    "morning_set": "1398.96",
+    "morning_value": "66813.11",
+    "morning_2d": "63",
+    "evening_set": "1400.89",
+    "evening_value": "102112.04",
+    "evening_2d": "92"
+  },
+  {
+    "date": "2026-02-10",
+    "day": "Tuesday",
+    "morning_set": "1405.75",
+    "morning_value": "40230.85",
+    "morning_2d": "50",
+    "evening_set": "1410.44",
+    "evening_value": "72261.36",
+    "evening_2d": "41"
+  },
+  {
+    "date": "2026-02-11",
+    "day": "Wednesday",
+    "morning_set": "1415.04",
+    "morning_value": "35232.32",
+    "morning_2d": "42",
+    "evening_set": "1411.70",
+    "evening_value": "59975.65",
+    "evening_2d": "05"
+  },
+  {
+    "date": "2026-02-12",
+    "day": "Thursday",
+    "morning_set": "1430.38",
+    "morning_value": "40978.92",
+    "morning_2d": "88",
+    "evening_set": "1441.53",
+    "evening_value": "78412.29",
+    "evening_2d": "32"
+  },
+  {
+    "date": "2026-02-13",
+    "day": "Friday",
+    "morning_set": "1437.50",
+    "morning_value": "36175.32",
+    "morning_2d": "05",
+    "evening_set": "1430.41",
+    "evening_value": "66146.84",
+    "evening_2d": "16"
+  },
+  {
+    "date": "2026-02-16",
+    "day": "Monday",
+    "morning_set": "1434.81",
+    "morning_value": "29977.96",
+    "morning_2d": "17",
+    "evening_set": "1438.09",
+    "evening_value": "51039.47",
+    "evening_2d": "99"
+  },
+  {
+    "date": "2026-02-17",
+    "day": "Tuesday",
+    "morning_set": "1444.82",
+    "morning_value": "32428.10",
+    "morning_2d": "28",
+    "evening_set": "1459.68",
+    "evening_value": "65248.95",
+    "evening_2d": "88"
+  },
+  {
+    "date": "2026-02-18",
+    "day": "Wednesday",
+    "morning_set": "1464.82",
+    "morning_value": "35566.19",
+    "morning_2d": "26",
+    "evening_set": "1466.67",
+    "evening_value": "67651.20",
+    "evening_2d": "71"
+  },
+  {
+    "date": "2026-02-19",
+    "day": "Thursday",
+    "morning_set": "1491.06",
+    "morning_value": "57990.88",
+    "morning_2d": "60",
+    "evening_set": "1493.91",
+    "evening_value": "94763.72",
+    "evening_2d": "13"
+  },
+  {
+    "date": "2026-02-20",
+    "day": "Friday",
+    "morning_set": "1483.95",
+    "morning_value": "55190.64",
+    "morning_2d": "50",
+    "evening_set": "1479.71",
+    "evening_value": "90486.03",
+    "evening_2d": "16"
+  },
+  {
+    "date": "2026-02-23",
+    "day": "Monday",
+    "morning_set": "1497.17",
+    "morning_value": "40530.29",
+    "morning_2d": "70",
+    "evening_set": "1480.24",
+    "evening_value": "85887.26",
+    "evening_2d": "47"
+  },
+  {
+    "date": "2026-02-24",
+    "day": "Tuesday",
+    "morning_set": "1475.03",
+    "morning_value": "41803.74",
+    "morning_2d": "33",
+    "evening_set": "1490.40",
+    "evening_value": "80178.36",
+    "evening_2d": "08"
+  },
+  {
+    "date": "2026-02-25",
+    "day": "Wednesday",
+    "morning_set": "1511.33",
+    "morning_value": "46978.20",
+    "morning_2d": "38",
+    "evening_set": "1516.01",
+    "evening_value": "95599.29",
+    "evening_2d": "19"
+  },
+  {
+    "date": "2026-02-26",
+    "day": "Thursday",
+    "morning_set": "1529.41",
+    "morning_value": "44254.20",
+    "morning_2d": "14",
+    "evening_set": "1533.64",
+    "evening_value": "77692.47",
+    "evening_2d": "42"
+  },
+  {
+    "date": "2026-02-27",
+    "day": "Friday",
+    "morning_set": "1539.04",
+    "morning_value": "51341.96",
+    "morning_2d": "41",
+    "evening_set": "1528.26",
+    "evening_value": "104314.15",
+    "evening_2d": "64"
+  }
+]
+[
+  {
+    "date": "2026-03-02",
+    "day": "Monday",
+    "morning_set": "1499.07",
+    "morning_value": "60859.33",
+    "morning_2d": "79",
+    "evening_set": "1466.51",
+    "evening_value": "113077.79",
+    "evening_2d": "17"
+  },
+  {
+    "date": "2026-03-04",
+    "day": "Wednesday",
+    "morning_set": "1348.99",
+    "morning_value": "95182.63",
+    "morning_2d": "92",
+    "evening_set": "1384.61",
+    "evening_value": "159372.02",
+    "evening_2d": "12"
+  },
+  {
+    "date": "2026-03-05",
+    "day": "Thursday",
+    "morning_set": "1406.44",
+    "morning_value": "57706.73",
+    "morning_2d": "46",
+    "evening_set": "1417.29",
+    "evening_value": "106582.21",
+    "evening_2d": "92"
+  },
+  {
+    "date": "2026-03-06",
+    "day": "Friday",
+    "morning_set": "1410.28",
+    "morning_value": "31073.67",
+    "morning_2d": "83",
+    "evening_set": "1410.37",
+    "evening_value": "62899.09",
+    "evening_2d": "79"
+  },
+  {
+    "date": "2026-03-09",
+    "day": "Monday",
+    "morning_set": "1367.65",
+    "morning_value": "57881.88",
+    "morning_2d": "51",
+    "evening_set": "1382.97",
+    "evening_value": "94274.29",
+    "evening_2d": "74"
+  },
+  {
+    "date": "2026-03-10",
+    "day": "Tuesday",
+    "morning_set": "1404.17",
+    "morning_value": "37299.83",
+    "morning_2d": "79",
+    "evening_set": "1405.76",
+    "evening_value": "68215.53",
+    "evening_2d": "65"
+  },
+  {
+    "date": "2026-03-11",
+    "day": "Wednesday",
+    "morning_set": "1424.08",
+    "morning_value": "38776.88",
+    "morning_2d": "86",
+    "evening_set": "1407.34",
+    "evening_value": "66700.42",
+    "evening_2d": "40"
+  },
+  {
+    "date": "2026-03-12",
+    "day": "Thursday",
+    "morning_set": "1411.55",
+    "morning_value": "33045.05",
+    "morning_2d": "55",
+    "evening_set": "1429.80",
+    "evening_value": "64496.48",
+    "evening_2d": "06"
+  },
+  {
+    "date": "2026-03-13",
+    "day": "Friday",
+    "morning_set": "1413.46",
+    "morning_value": "35716.35",
+    "morning_2d": "66",
+    "evening_set": "1409.35",
+    "evening_value": "60444.59",
+    "evening_2d": "54"
+  },
+  {
+    "date": "2026-03-16",
+    "day": "Monday",
+    "morning_set": "1414.16",
+    "morning_value": "26961.09",
+    "morning_2d": "61",
+    "evening_set": "1405.02",
+    "evening_value": "52542.60",
+    "evening_2d": "22"
+  },
+  {
+    "date": "2026-03-17",
+    "day": "Tuesday",
+    "morning_set": "1437.12",
+    "morning_value": "41691.67",
+    "morning_2d": "21",
+    "evening_set": "1433.88",
+    "evening_value": "71255.39",
+    "evening_2d": "85"
+  },
+  {
+    "date": "2026-03-18",
+    "day": "Wednesday",
+    "morning_set": "1440.01",
+    "morning_value": "34847.50",
+    "morning_2d": "17",
+    "evening_set": "1440.85",
+    "evening_value": "56571.17",
+    "evening_2d": "51"
+  },
+  {
+    "date": "2026-03-19",
+    "day": "Thursday",
+    "morning_set": "1436.74",
+    "morning_value": "38554.44",
+    "morning_2d": "44",
+    "evening_set": "1417.45",
+    "evening_value": "73426.60",
+    "evening_2d": "56"
+  },
+  {
+    "date": "2026-03-20",
+    "day": "Friday",
+    "morning_set": "1425.81",
+    "morning_value": "27610.88",
+    "morning_2d": "10",
+    "evening_set": "1432.99",
+    "evening_value": "68604.34",
+    "evening_2d": "94"
+  },
+  {
+    "date": "2026-03-23",
+    "day": "Monday",
+    "morning_set": "1404.02",
+    "morning_value": "33866.10",
+    "morning_2d": "26",
+    "evening_set": "1397.34",
+    "evening_value": "61490.16",
+    "evening_2d": "40"
+  },
+  {
+    "date": "2026-03-24",
+    "day": "Tuesday",
+    "morning_set": "1409.39",
+    "morning_value": "32257.40",
+    "morning_2d": "97",
+    "evening_set": "1410.39",
+    "evening_value": "61545.76",
+    "evening_2d": "95"
+  },
+  {
+    "date": "2026-03-25",
+    "day": "Wednesday",
+    "morning_set": "1443.35",
+    "morning_value": "37742.15",
+    "morning_2d": "52",
+    "evening_set": "1457.91",
+    "evening_value": "73737.09",
+    "evening_2d": "17"
+  },
+  {
+    "date": "2026-03-26",
+    "day": "Thursday",
+    "morning_set": "1448.51",
+    "morning_value": "39093.35",
+    "morning_2d": "13",
+    "evening_set": "1442.92",
+    "evening_value": "65310.89",
+    "evening_2d": "20"
+  },
+  {
+    "date": "2026-03-27",
+    "day": "Friday",
+    "morning_set": "1448.75",
+    "morning_value": "27955.94",
+    "morning_2d": "55",
+    "evening_set": "1447.05",
+    "evening_value": "63398.39",
+    "evening_2d": "58"
+  },
+  {
+    "date": "2026-03-30",
+    "day": "Monday",
+    "morning_set": "1442.62",
+    "morning_value": "29300.99",
+    "morning_2d": "20",
+    "evening_set": "1449.62",
+    "evening_value": "57708.29",
+    "evening_2d": "28"
+  },
+  {
+    "date": "2026-03-31",
+    "day": "Tuesday",
+    "morning_set": "1447.26",
+    "morning_value": "31748.54",
+    "morning_2d": "68",
+    "evening_set": "1448.14",
+    "evening_value": "71800.85",
+    "evening_2d": "40"
+  }
+]
+[
+  {
+    "date": "2026-04-01",
+    "day": "Wednesday",
+    "morning_set": "1474.40",
+    "morning_value": "45077.29",
+    "morning_2d": "07",
+    "evening_set": "1470.99",
+    "evening_value": "82878.01",
+    "evening_2d": "98"
+  },
+  {
+    "date": "2026-04-02",
+    "day": "Thursday",
+    "morning_set": "1466.03",
+    "morning_value": "32338.02",
+    "morning_2d": "38",
+    "evening_set": "1465.72",
+    "evening_value": "55258.53",
+    "evening_2d": "28"
+  },
+  {
+    "date": "2026-04-03",
+    "day": "Friday",
+    "morning_set": "1461.01",
+    "morning_value": "23655.67",
+    "morning_2d": "15",
+    "evening_set": "1454.00",
+    "evening_value": "42563.62",
+    "evening_2d": "03"
+  },
+  {
+    "date": "2026-04-07",
+    "day": "Tuesday",
+    "morning_set": "1461.96",
+    "morning_value": "24755.65",
+    "morning_2d": "65",
+    "evening_set": "1464.43",
+    "evening_value": "45084.97",
+    "evening_2d": "34"
+  },
+  {
+    "date": "2026-04-08",
+    "day": "Wednesday",
+    "morning_set": "1484.99",
+    "morning_value": "39896.36",
+    "morning_2d": "96",
+    "evening_set": "1485.03",
+    "evening_value": "66928.66",
+    "evening_2d": "38"
+  },
+  {
+    "date": "2026-04-09",
+    "day": "Thursday",
+    "morning_set": "1489.51",
+    "morning_value": "36022.52",
+    "morning_2d": "12",
+    "evening_set": "1489.66",
+    "evening_value": "63413.34",
+    "evening_2d": "63"
+  },
+  {
+    "date": "2026-04-10",
+    "day": "Friday",
+    "morning_set": "1503.35",
+    "morning_value": "24803.68",
+    "morning_2d": "53",
+    "evening_set": "1506.84",
+    "evening_value": "43883.66",
+    "evening_2d": "43"
+  },
+  {
+    "date": "2026-04-16",
+    "day": "Thursday",
+    "morning_set": "1498.80",
+    "morning_value": "51477.76",
+    "morning_2d": "07",
+    "evening_set": "1489.73",
+    "evening_value": "81680.39",
+    "evening_2d": "30"
+  },
+  {
+    "date": "2026-04-17",
+    "day": "Friday",
+    "morning_set": "1476.53",
+    "morning_value": "31499.69",
+    "morning_2d": "39",
+    "evening_set": "1482.45",
+    "evening_value": "56999.86",
+    "evening_2d": "59"
+  },
+  {
+    "date": "2026-04-20",
+    "day": "Monday",
+    "morning_set": "1479.85",
+    "morning_value": "29342.28",
+    "morning_2d": "52",
+    "evening_set": "1481.85",
+    "evening_value": "54071.84",
+    "evening_2d": "51"
+  },
+  {
+    "date": "2026-04-21",
+    "day": "Tuesday",
+    "morning_set": "1483.99",
+    "morning_value": "33587.81",
+    "morning_2d": "97",
+    "evening_set": "1483.50",
+    "evening_value": "57803.24",
+    "evening_2d": "03"
+  },
+  {
+    "date": "2026-04-22",
+    "day": "Wednesday",
+    "morning_set": "1483.75",
+    "morning_value": "39281.28",
+    "morning_2d": "51",
+    "evening_set": "1479.74",
+    "evening_value": "59498.43",
+    "evening_2d": "48"
+  },
+  {
+    "date": "2026-04-23",
+    "day": "Thursday",
+    "morning_set": "1458.61",
+    "morning_value": "40197.98",
+    "morning_2d": "17",
+    "evening_set": "1461.35",
+    "evening_value": "66513.61",
+    "evening_2d": "53"
+  },
+  {
+    "date": "2026-04-24",
+    "day": "Friday",
+    "morning_set": "1450.48",
+    "morning_value": "27728.66",
+    "morning_2d": "88",
+    "evening_set": "1456.10",
+    "evening_value": "48768.41",
+    "evening_2d": "08"
+  },
+  {
+    "date": "2026-04-27",
+    "day": "Monday",
+    "morning_set": "1480.51",
+    "morning_value": "27573.43",
+    "morning_2d": "13",
+    "evening_set": "1479.13",
+    "evening_value": "47219.93",
+    "evening_2d": "39"
+  },
+  {
+    "date": "2026-04-28",
+    "day": "Tuesday",
+    "morning_set": "1471.61",
+    "morning_value": "32233.21",
+    "morning_2d": "13",
+    "evening_set": "1480.20",
+    "evening_value": "60040.99",
+    "evening_2d": "00"
+  },
+  {
+    "date": "2026-04-29",
+    "day": "Wednesday",
+    "morning_set": "1487.92",
+    "morning_value": "30221.64",
+    "morning_2d": "21",
+    "evening_set": "1491.74",
+    "evening_value": "57083.51",
+    "evening_2d": "43"
+  },
+  {
+    "date": "2026-04-30",
+    "day": "Thursday",
+    "morning_set": "1485.75",
+    "morning_value": "35034.55",
+    "morning_2d": "54",
+    "evening_set": "1493.69",
+    "evening_value": "60940.47",
+    "evening_2d": "90"
+  }
+]
+[
+  {
+    "date": "2026-05-05",
+    "day": "Tuesday",
+    "morning_set": "1486.99",
+    "morning_value": "45198.31",
+    "morning_2d": "98",
+    "evening_set": "1490.10",
+    "evening_value": "73115.20",
+    "evening_2d": "05"
+  },
+  {
+    "date": "2026-05-06",
+    "day": "Wednesday",
+    "morning_set": "1508.05",
+    "morning_value": "43044.17",
+    "morning_2d": "54",
+    "evening_set": "1516.91",
+    "evening_value": "82023.35",
+    "evening_2d": "13"
+  },
+  {
+    "date": "2026-05-07",
+    "day": "Thursday",
+    "morning_set": "1523.52",
+    "morning_value": "40631.88",
+    "morning_2d": "21",
+    "evening_set": "1507.53",
+    "evening_value": "81704.48",
+    "evening_2d": "34"
+  },
+  {
+    "date": "2026-05-08",
+    "day": "Friday",
+    "morning_set": "1506.52",
+    "morning_value": "38746.83",
+    "morning_2d": "26",
+    "evening_set": "1500.36",
+    "evening_value": "64393.81",
+    "evening_2d": "63"
+  },
+  {
+    "date": "2026-05-11",
+    "day": "Monday",
+    "morning_set": "1493.75",
+    "morning_value": "38646.92",
+    "morning_2d": "56",
+    "evening_set": "1489.29",
+    "evening_value": "61489.40",
+    "evening_2d": "99"
+  },
+  {
+    "date": "2026-05-12",
+    "day": "Tuesday",
+    "morning_set": "1488.77",
+    "morning_value": "32730.64",
+    "morning_2d": "70",
+    "evening_set": "1483.56",
+    "evening_value": "55549.72",
+    "evening_2d": "69"
+  },
+  {
+    "date": "2026-05-13",
+    "day": "Wednesday",
+    "morning_set": "1514.35",
+    "morning_value": "42635.74",
+    "morning_2d": "55",
+    "evening_set": "1517.26",
+    "evening_value": "67660.51",
+    "evening_2d": "60"
+  },
+  {
+    "date": "2026-05-14",
+    "day": "Thursday",
+    "morning_set": "1524.31",
+    "morning_value": "38684.51",
+    "morning_2d": "14",
+    "evening_set": "1539.12",
+    "evening_value": "75021.85",
+    "evening_2d": "21"
+  },
+  {
+    "date": "2026-05-15",
+    "day": "Friday",
+    "morning_set": "1526.50",
+    "morning_value": "37018.11",
+    "morning_2d": "08",
+    "evening_set": "1517.95",
+    "evening_value": "67869.48",
+    "evening_2d": "59"
+  }
+]
+
