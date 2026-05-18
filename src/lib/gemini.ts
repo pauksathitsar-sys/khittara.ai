@@ -14,8 +14,13 @@ export class GeminiService {
     this.settings = settings;
     this.onUsageReport = onUsageReport;
 
-    if (settings.apiKey) {
-      this.ai = new GoogleGenAI({ apiKey: settings.apiKey });
+    // 💡 Browser (GitHub Pages) ပေါ်တွင် Run သောအခါ SDK အသစ်ကြောင့် အဖြူရောင် Crash မဖြစ်စေရန် အကာအကွယ်ပေးခြင်း
+    try {
+      if (settings.apiKey) {
+        this.ai = new GoogleGenAI({ apiKey: settings.apiKey });
+      }
+    } catch (sdkError) {
+      console.error("⚠️ SDK Initialization failed safely in browser:", sdkError);
     }
   }
 
@@ -48,13 +53,13 @@ export class GeminiService {
   async sendMessage(
     messages: Message[],
     systemInstruction?: string,
-    model: AIModel = "gemini-2.5-flash" // 💡 Default Model ကို ပိုမိုတည်ငြိမ်သော ၂.၅ ဗားရှင်းသို့ ပြောင်းလဲထားပါသည်
+    model: AIModel = "gemini-2.5-flash"
   ): Promise<string> {
     if (!this.ai) {
       return "Critical failure: AI Core not initialized. Check your API key in Settings.";
     }
 
-    // 💡 LocalStorage အဟောင်းထဲမှ "models/" စာသား သို့မဟုတ် gemini-1.5 နာမည်ဟောင်းများ ပါလာပါက သန့်စင်ပေးမည့်စနစ်
+    // LocalStorage အဟောင်းထဲမှ "models/" စာသား သို့မဟုတ် gemini-1.5 နာမည်ဟောင်းများ ပါလာပါက သန့်စင်ပေးမည့်စနစ်
     let activeModel = model;
     if (activeModel.includes('models/')) {
       activeModel = activeModel.replace('models/', '');
@@ -63,7 +68,7 @@ export class GeminiService {
       activeModel = 'gemini-2.5-flash';
     }
 
-    // မက်ဆေ့ခ်ျ ပို့ခါနီးမှ နောက်ကွယ်ကနေ 2D ဒေတာကို လှမ်းဆွဲခိုင်းခြင်း (App မပိတ်စေရန်)
+    // မက်ဆေ့ခ်ျ ပို့ခါနီးမှ နောက်ကွယ်ကနေ 2D ဒေတာကို လှမ်းဆွဲခိုင်းခြင်း
     this.ensure2dDataLoaded().catch(() => {});
 
     // khittara.md (Core Brain) ကို Fetch လုပ်ခြင်း
@@ -94,12 +99,10 @@ export class GeminiService {
     }));
 
     try {
-      // ပြင်ဆင်ပြီးသား activeModel ဖြင့် လှမ်းခေါ်မည်
       return await this.executeCall(activeModel, contents, masterInstruction);
     } catch (error: any) {
       console.error(`❌ Primary model (${activeModel}) failed:`, error);
       
-      // 💡 Fallback Model အား 404 အမှားကင်းစင်သော gemini-2.5-flash သို့ ပြောင်းထားပါသည်
       const fallbackModel = "gemini-2.5-flash";
       if (activeModel !== fallbackModel) {
         try {
@@ -230,7 +233,7 @@ export class GeminiService {
   async analyzeImageAndPrompt(
     imageFile: File,
     promptText: string,
-    model: AIModel = "gemini-2.5-flash" // 💡 ဤနေရာကိုလည်း ပိုမိုကိုက်ညီသော model သို့ ပြောင်းလဲထားပါသည်
+    model: AIModel = "gemini-2.5-flash"
   ): Promise<string> {
     if (!this.ai) return "Critical failure: AI Core not initialized.";
     
