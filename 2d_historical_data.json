@@ -3323,3 +3323,21 @@
   }
 ]
 
+{
+  "date": "2026-05-18",
+  "day_of_week": "Monday",
+  "sessions": {
+    "midday": {
+      "time": "12:01 PM",
+      "result_2d": "14",
+      "set_index": "1519.51",
+      "value": "31514.60"
+    },
+    "evening": {
+      "time": "4:30 PM",
+      "result_2d": "43",
+      "set_index": "1517.74",
+      "value": "56223.58"
+    }
+  }
+}
