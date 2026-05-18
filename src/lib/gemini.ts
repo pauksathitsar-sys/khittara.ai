@@ -17,7 +17,6 @@ export class GeminiService {
     if (settings.apiKey) {
       this.ai = new GoogleGenAI({ apiKey: settings.apiKey });
     }
-    // 💡 UI အဖြူရောင် မဖြစ်စေရန် Constructor ထဲတွင် fetch ခေါ်ခြင်းကို လုံးဝ ဖြုတ်လိုက်ပါပြီ။
   }
 
   // လိုအပ်မှသာ နောက်ကွယ်ကနေ ဝင်ဆွဲပေးမည့် ဘေးကင်းသော Function
@@ -49,10 +48,19 @@ export class GeminiService {
   async sendMessage(
     messages: Message[],
     systemInstruction?: string,
-    model: AIModel = "gemini-3-flash-preview"
+    model: AIModel = "gemini-2.5-flash" // 💡 Default Model ကို ပိုမိုတည်ငြိမ်သော ၂.၅ ဗားရှင်းသို့ ပြောင်းလဲထားပါသည်
   ): Promise<string> {
     if (!this.ai) {
       return "Critical failure: AI Core not initialized. Check your API key in Settings.";
+    }
+
+    // 💡 LocalStorage အဟောင်းထဲမှ "models/" စာသား သို့မဟုတ် gemini-1.5 နာမည်ဟောင်းများ ပါလာပါက သန့်စင်ပေးမည့်စနစ်
+    let activeModel = model;
+    if (activeModel.includes('models/')) {
+      activeModel = activeModel.replace('models/', '');
+    }
+    if (activeModel.includes('gemini-1.5')) {
+      activeModel = 'gemini-2.5-flash';
     }
 
     // မက်ဆေ့ခ်ျ ပို့ခါနီးမှ နောက်ကွယ်ကနေ 2D ဒေတာကို လှမ်းဆွဲခိုင်းခြင်း (App မပိတ်စေရန်)
@@ -86,12 +94,14 @@ export class GeminiService {
     }));
 
     try {
-      return await this.executeCall(model, contents, masterInstruction);
+      // ပြင်ဆင်ပြီးသား activeModel ဖြင့် လှမ်းခေါ်မည်
+      return await this.executeCall(activeModel, contents, masterInstruction);
     } catch (error: any) {
-      console.error(`❌ Primary model (${model}) failed:`, error);
+      console.error(`❌ Primary model (${activeModel}) failed:`, error);
       
-      const fallbackModel = "gemini-1.5-flash";
-      if (model !== fallbackModel) {
+      // 💡 Fallback Model အား 404 အမှားကင်းစင်သော gemini-2.5-flash သို့ ပြောင်းထားပါသည်
+      const fallbackModel = "gemini-2.5-flash";
+      if (activeModel !== fallbackModel) {
         try {
           console.log("⚡ Server busy. Waiting 1.5 seconds before fallback...");
           await this.sleep(1500);
@@ -148,7 +158,6 @@ export class GeminiService {
           const args = call.args as { search_query: string };
           console.log(`🤖 Tool Called: "${args.search_query}"`);
           
-          // အကယ်၍ ဒေတာမရှိသေးရင် ချက်ချင်း ဝင်ဆွဲခိုင်းပြီးမှ ရှာမည်
           if (this.cached2dData.length === 0) {
             await this.ensure2dDataLoaded().catch(() => {});
           }
@@ -221,14 +230,20 @@ export class GeminiService {
   async analyzeImageAndPrompt(
     imageFile: File,
     promptText: string,
-    model: AIModel = "gemini-3-flash-preview"
+    model: AIModel = "gemini-2.5-flash" // 💡 ဤနေရာကိုလည်း ပိုမိုကိုက်ညီသော model သို့ ပြောင်းလဲထားပါသည်
   ): Promise<string> {
     if (!this.ai) return "Critical failure: AI Core not initialized.";
+    
+    let activeModel = model;
+    if (activeModel.includes('models/')) {
+      activeModel = activeModel.replace('models/', '');
+    }
+
     const startTime = Date.now();
     try {
       const b64 = await fileToBase64(imageFile);
       const response = await this.ai.models.generateContent({
-        model: model,
+        model: activeModel,
         contents: {
           parts: [
             { text: promptText },
@@ -236,7 +251,7 @@ export class GeminiService {
           ]
         }
       });
-      this.trackUsage(model, response, startTime);
+      this.trackUsage(activeModel, response, startTime);
       return response.text || "No analysis generated.";
     } catch (error: any) {
       return `Error: ${error.message || "Failed to analyze image."}`;
