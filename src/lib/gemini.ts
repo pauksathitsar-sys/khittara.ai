@@ -6,8 +6,9 @@ export class GeminiService {
   private settings: Settings | null = null;
   private onUsageReport?: (usage: any) => void;
   
-  // 2D ဒေတာကို Request တိုင်း Fetch မလုပ်ရအောင် Memory ထဲတွင် ကြိုသိမ်းထားရန် Cache
+  // 2D ဒေတာကို တစ်ခါပဲ ဆွဲရန်နှင့် သိမ်းထားရန် Cache
   private cached2dData: any[] = [];
+  private isDataLoading: boolean = false;
 
   constructor(settings: Settings, onUsageReport?: (usage: any) => void) {
     this.settings = settings;
@@ -16,25 +17,31 @@ export class GeminiService {
     if (settings.apiKey) {
       this.ai = new GoogleGenAI({ apiKey: settings.apiKey });
     }
-    
-    // Service စတင်ချိန်ကတည်းက ဒေတာကို နောက်ကွယ်ကနေ ကြိုဆွဲထားမည်
-    this.preload2dData();
+    // 💡 UI အဖြူရောင် မဖြစ်စေရန် Constructor ထဲတွင် fetch ခေါ်ခြင်းကို လုံးဝ ဖြုတ်လိုက်ပါပြီ။
   }
 
-  // GitHub မှ 2D Database ကို ကြိုတင်ဆွဲယူသိမ်းဆည်းပေးသည့် function
-  private async preload2dData() {
+  // လိုအပ်မှသာ နောက်ကွယ်ကနေ ဝင်ဆွဲပေးမည့် ဘေးကင်းသော Function
+  private async ensure2dDataLoaded() {
+    if (this.cached2dData.length > 0 || this.isDataLoading) return;
+    
+    this.isDataLoading = true;
     try {
-      const response = await fetch('https://raw.githubusercontent.com/pauksathitsar-sys/khittara.ai/main/2d_historical_data.json');
+      const response = await fetch('https://raw.githubusercontent.com/pauksathitsar-sys/khittara.ai/main/2d_historical_data.json', {
+        method: 'GET',
+        headers: { 'Accept': 'application/json' },
+        mode: 'cors'
+      });
       if (response.ok) {
         this.cached2dData = await response.json();
-        console.log(`✅ Khittara Engine: 2D Historical Data preloaded successfully. (${this.cached2dData.length} records)`);
+        console.log(`✅ 2D Data Loaded: ${this.cached2dData.length} records.`);
       }
     } catch (error) {
-      console.warn("⚠️ Khittara Engine Warning: Could not preload 2D data:", error);
+      console.warn("⚠️ 2D Data prefetch failed safely:", error);
+    } finally {
+      this.isDataLoading = false;
     }
   }
 
-  // 503 Error ကြုံရပါက ခေတ္တစောင့်ဆိုင်းရန် Helper Function
   private sleep(ms: number) {
     return new Promise(resolve => setTimeout(resolve, ms));
   }
@@ -48,7 +55,10 @@ export class GeminiService {
       return "Critical failure: AI Core not initialized. Check your API key in Settings.";
     }
 
-    // (က) khittara.md (Core Brain) ဖိုင်ကို Fetch လုပ်ခြင်း
+    // မက်ဆေ့ခ်ျ ပို့ခါနီးမှ နောက်ကွယ်ကနေ 2D ဒေတာကို လှမ်းဆွဲခိုင်းခြင်း (App မပိတ်စေရန်)
+    this.ensure2dDataLoaded().catch(() => {});
+
+    // khittara.md (Core Brain) ကို Fetch လုပ်ခြင်း
     let khittaraBrainContent = "";
     try {
       const brainResponse = await fetch('https://raw.githubusercontent.com/pauksathitsar-sys/khittara.ai/main/khittara.md');
@@ -59,7 +69,6 @@ export class GeminiService {
       console.warn("⚠️ Could not load khittara.md automatically:", brainError);
     }
 
-    // ၂D ဒေတာကြီး မပါဝင်တော့သဖြင့် Token သက်သာပြီး ပေါ့ပါးသွားသော Master Instruction
     const masterInstruction = `
       [CORE SYSTEM PROTOCOL]
       မင်းသည် အောက်တွင် ပေးထားသော "khittara.md" ဖိုင်ထဲမှ လမ်းညွှန်ချက်များ၊ စည်းကမ်းချက်များနှင့် ဇာတ်ကောင်စရိုက် (Character Specs) များကို အဓိက အခြေခံ ဦးစားပေး (Priority No.1) အနေဖြင့် သေချာစွာ ဖတ်ရှုပြီး ၎င်းအတိုင်း တသွေမတိမ်း လိုက်နာရမည်။
@@ -77,20 +86,15 @@ export class GeminiService {
     }));
 
     try {
-      // ပင်မ Model ဖြင့် အရင်ခေါ်ယူကြည့်မည်
       return await this.executeCall(model, contents, masterInstruction);
     } catch (error: any) {
       console.error(`❌ Primary model (${model}) failed:`, error);
       
-      // တကယ်လို့ 503 သို့မဟုတ် တခြား error တက်ရင် အလုပ်ဖြစ်နှုန်းအလွန်မြင့်သော ဗားရှင်းသို့ ပြောင်းမည်
       const fallbackModel = "gemini-1.5-flash";
-      
       if (model !== fallbackModel) {
         try {
-          console.log("⚡ Server busy or error encountered. Waiting 1.5 seconds before fallback...");
-          await this.sleep(1500); // Server အား အနားပေးရန် ခေတ္တစောင့်ခြင်း
-          
-          console.log(`⚡ Falling back to ${fallbackModel}...`);
+          console.log("⚡ Server busy. Waiting 1.5 seconds before fallback...");
+          await this.sleep(1500);
           return await this.executeCall(fallbackModel, contents, masterInstruction);
         } catch (fallbackError: any) {
           console.error("❌ Fallback failed:", fallbackError);
@@ -114,9 +118,6 @@ export class GeminiService {
           temperature: 0.7,
           topP: 1,
           topK: 1,
-          // ========================================================
-          // 💡 FUNCTION CALLING (TOOLS) DEFINITION
-          // ========================================================
           tools: [{
             functionDeclarations: [
               {
@@ -138,7 +139,6 @@ export class GeminiService {
         }
       });
 
-      // AI က ဒေတာရှာဖို့ Tool ခေါ်ရန် ဆုံးဖြတ်ခြင်း ရှိ၊ မရှိ စစ်ဆေးသည်
       const functionCalls = response.functionCalls;
       
       if (functionCalls && functionCalls.length > 0) {
@@ -146,12 +146,15 @@ export class GeminiService {
         
         if (call.name === "get_2d_historical_data") {
           const args = call.args as { search_query: string };
-          console.log(`🤖 Khittara AI Called Tool: Searching 2D data for -> "${args.search_query}"`);
+          console.log(`🤖 Tool Called: "${args.search_query}"`);
           
-          // Local JSON Cache ထဲတွင် သွားရောက်ရှာဖွေသည်
+          // အကယ်၍ ဒေတာမရှိသေးရင် ချက်ချင်း ဝင်ဆွဲခိုင်းပြီးမှ ရှာမည်
+          if (this.cached2dData.length === 0) {
+            await this.ensure2dDataLoaded().catch(() => {});
+          }
+
           const functionResult = this.handle2dSearch(args.search_query);
 
-          // ဒေတာရလဒ်အား SDK v2.2.0 စံနှုန်းအတိုင်း 'tool' role ဖြင့် AI ထံ ပြန်လည်ပေးပို့ခြင်း
           const secondResponse = await this.ai.models.generateContent({
             model: modelName,
             contents: [
@@ -182,23 +185,17 @@ export class GeminiService {
     }
   }
 
-  // ========================================================
-  // 💡 LOCAL SEARCH LOGIC (JSON Cache ထဲတွင် လိုက်ရှာပေးသည့်အပိုင်း)
-  // ========================================================
   private handle2dSearch(query: string): any {
     if (this.cached2dData.length === 0) {
-      return { status: "error", message: "2D Historical Database is empty or not loaded yet." };
+      return { status: "error", message: "2D Historical Database is currently empty or loading. Please ask again in a moment." };
     }
 
     const lowerQuery = query.toLowerCase().trim();
-    
-    // JSON Dataset ထဲမှ ကိုက်ညီသော စာသား သို့မဟုတ် နေ့စွဲပါဝင်သည့် ရလဒ်များကို စစ်ထုတ်ခြင်း
     const filteredResults = this.cached2dData.filter((row: any) => {
       const rowString = JSON.stringify(row).toLowerCase();
       return rowString.includes(lowerQuery);
     });
 
-    // Token Limits မကျော်စေရန်အတွက် အများဆုံး အပုဒ်ရေ ၃၀ သာ ကန့်သတ်၍ AI ထံ ပြန်ပေးမည်
     return {
       status: "success",
       search_query: query,
@@ -226,14 +223,10 @@ export class GeminiService {
     promptText: string,
     model: AIModel = "gemini-3-flash-preview"
   ): Promise<string> {
-    if (!this.ai) {
-      return "Critical failure: AI Core not initialized.";
-    }
-
+    if (!this.ai) return "Critical failure: AI Core not initialized.";
     const startTime = Date.now();
     try {
       const b64 = await fileToBase64(imageFile);
-      
       const response = await this.ai.models.generateContent({
         model: model,
         contents: {
@@ -243,22 +236,9 @@ export class GeminiService {
           ]
         }
       });
-      
-      const latency = Date.now() - startTime;
-      if (this.onUsageReport && response.usageMetadata) {
-        this.onUsageReport({
-          promptTokens: response.usageMetadata.promptTokenCount || 0,
-          candidatesTokens: response.usageMetadata.candidatesTokenCount || 0,
-          totalTokens: response.usageMetadata.totalTokenCount || 0,
-          timestamp: Date.now(),
-          model: model,
-          latency: latency,
-        });
-      }
-
+      this.trackUsage(model, response, startTime);
       return response.text || "No analysis generated.";
     } catch (error: any) {
-      console.error("❌ Image analysis failed:", error);
       return `Error: ${error.message || "Failed to analyze image."}`;
     }
   }
@@ -267,10 +247,7 @@ export class GeminiService {
 async function fileToBase64(file: File): Promise<string> {
   return new Promise((resolve, reject) => {
     const reader = new FileReader();
-    reader.onloadend = () => {
-      const base64Data = (reader.result as string).split(',')[1];
-      resolve(base64Data);
-    };
+    reader.onloadend = () => resolve((reader.result as string).split(',')[1]);
     reader.onerror = reject;
     reader.readAsDataURL(file);
   });
